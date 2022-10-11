@@ -1,20 +1,12 @@
-function calculadora(operador,n1,n2) {
-    switch (operador) {
-        case '*':
-            
-            break;
-        case '/':
-            
-            break;
-        case '-':
-            
-            break;
-        case '+':
-            
-            break;
-    
-        default:
-            break;
-    }
-    
+function suma(n1,n2) {
+    return n1+n2;
+}
+function resta(n1,n2) {
+    return n1-n2;
+}
+function division(n1,n2) {
+    return n1/n2;
+}
+function multiplicacion(n1,n2) {
+    return n1*n2;
 }
