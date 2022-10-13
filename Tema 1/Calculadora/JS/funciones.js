@@ -1,4 +1,7 @@
-function suma(n1,n2) {
+function suma() {
+    if (condition) {
+        
+    }
     return n1+n2;
 }
 function resta(n1,n2) {
