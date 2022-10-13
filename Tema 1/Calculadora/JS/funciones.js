@@ -2,7 +2,7 @@ function suma(n1,n2) {
     if ((isNaN(n1)) || (isNaN(n2))) {
         throw new Error("No son números")
     }
-    return n1+n2;
+    return parseInt(n1+n2);
 }
 function resta(n1,n2) {
     if ((isNaN(n1)) || (isNaN(n2))) {
@@ -27,30 +27,48 @@ function multiplicacion(n1,n2) {
     return n1*n2;
 }
 
-function calculadora() {
+function calculadoraSuma() {
     const forma=document.getElementById('formulario');
-    const n1 = formulario['primerDigito'].value;
-    const n2 = formulario['segundoDigito'].value;
+    const n1 = parseInt(formulario['primerDigito'].value);
+    const n2 = parseInt(formulario['segundoDigito'].value);
+    
+    try {
+        document.getElementById('resultado').value=`${suma(n1,n2)}`;                
+    } catch (error) {
+        document.getElementById('resultado').style.color='color';
+        document.getElementById('resultado').value=error;
+    }
+}
+function calculadoraResta() {
+    const forma=document.getElementById('formulario');
+    const n1 = parseInt(formulario['primerDigito'].value);
+    const n2 = parseInt(formulario['segundoDigito'].value);
+    try {
+        document.getElementById('resultado').value=`${resta(n1,n2)}`;                
+    } catch (error) {
+        document.getElementById('resultado').style.color='color';
+        document.getElementById('resultado').value=error;
+    }
+}
+function calculadoraDivi() {
+    const forma=document.getElementById('formulario');
+    const n1 = parseInt(formulario['primerDigito'].value);
+    const n2 = parseInt(formulario['segundoDigito'].value);
 
     try {
-        switch (document.getElementById()) {
-            case document.getElementById('suma'):
-                document.getElementById('resultado').value=`${suma(n1,n2)}`
-                break;
-            case document.getElementById('resta'):
-                document.getElementById('resultado').value=`${resta(n1,n2)}`
-                break;
-            case document.getElementById('division'):
-                document.getElementById('resultado').value=`${division(n1,n2)}`
-                break;
-            case document.getElementById('multiplicacion'):
-                document.getElementById('resultado').value=`${multiplicacion(n1,n2)}`
-                break;
-        
-            default:
+        document.getElementById('resultado').value=`${division(n1,n2)}`;                
+    } catch (error) {
+        document.getElementById('resultado').style.color='color';
+        document.getElementById('resultado').value=error;
+    }
+}
+function calculadoraMulti() {
+    const forma=document.getElementById('formulario');
+    const n1 = parseInt(formulario['primerDigito'].value);
+    const n2 = parseInt(formulario['segundoDigito'].value);
 
-                break;
-        }     
+    try {
+        document.getElementById('resultado').value=`${multiplicacion(n1,n2)}`;                
     } catch (error) {
         document.getElementById('resultado').style.color='color';
         document.getElementById('resultado').value=error;
