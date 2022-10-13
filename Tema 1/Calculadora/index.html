@@ -31,7 +31,7 @@
             <ul>
                 <li>
                     <ul>
-                        <form>
+                        <form id="formulario">
                             <label for="primerDigito">Primer dígito:</label>
                             <br>
                             <br>
@@ -44,10 +44,16 @@
                             <input type="number" name="segundoDigito" id="segundoDigito" size="30">
                             <br>
                             <br>
-                            <button onclick="suma()">Suma</button>
-                            <button onclick="resta()">Resta</button>
-                            <button onclick="division()">Divide</button>
-                            <button onclick="multiplicacion()">Multiplica</button>
+                            <label for="resultado">Resultado:</label>
+                            <br>
+                            <br>
+                            <input type="number" name="resultado" id="resultado">
+                            <br>
+                            <br>
+                            <button onclick="calculadora()">Suma</button>
+                            <button onclick="calculadora()">Resta</button>
+                            <button onclick="calculadora()">Divide</button>
+                            <button onclick="calculadora()">Multiplica</button>
                         </form>
                     </ul>                   
                 </li>
