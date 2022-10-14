@@ -106,7 +106,7 @@ div.wrapper{
 #header #topnav li.last{
     margin-right:0;
 }
-
+/*-------------------------------------------------------------------------------------------------------*/
 .fl_left, .imgl{
     float:left;
 }
@@ -167,7 +167,7 @@ div.wrapper{
 #intro li{
     display:block; 
     float:left; 
-    width:300px; 
+    width:50%; 
     margin:0 30px 0 30px; 
     padding:0;
 }
@@ -204,16 +204,17 @@ div.wrapper{
     background-color: #FDC609;
     color: #131313;
 }
-.tuvieja{
+button{
     background-color: #131313;
     color: #FDC609;
     border: 2px solid #FDC609;
     padding: 10px 20px;
+    margin: 5px;
     text-align: center;
     text-decoration: none;
     display: inline-block;  
 }
-.mio:hover{
+button:hover{
     background-color: #FDC609;
     color: #131313;
 }
