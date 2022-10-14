@@ -204,7 +204,7 @@ div.wrapper{
     background-color: #FDC609;
     color: #131313;
 }
-#intro button.mio{
+button{
     background-color: #131313;
     color: #FDC609;
     border: 2px solid #FDC609;
@@ -213,7 +213,7 @@ div.wrapper{
     text-decoration: none;
     display: inline-block;  
 }
-#intro button:hover.mio{
+button:hover{
     background-color: #FDC609;
     color: #131313;
 }
