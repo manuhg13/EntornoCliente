@@ -36,7 +36,7 @@ div.wrapper{
     padding:0; 
     text-align:left;
 }
-#header, #intro, #latest, #breadcrumb, #container, #footer, #copyright{
+#header, #intro, #latest, #footer {
     display:block; 
     position:relative; 
     width:100%; 
@@ -204,7 +204,7 @@ div.wrapper{
     background-color: #FDC609;
     color: #131313;
 }
-#intro .mio{
+.mio{
     background-color: #131313;
     color: #FDC609;
     border: 2px solid #FDC609;
