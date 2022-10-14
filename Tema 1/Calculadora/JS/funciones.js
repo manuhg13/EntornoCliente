@@ -1,3 +1,4 @@
+//-------------Funciones que hacen cuentas----------------//
 function suma(n1,n2) {
     if ((isNaN(n1)) || (isNaN(n2))) {
         throw new Error("No son números")
@@ -26,7 +27,7 @@ function multiplicacion(n1,n2) {
     }
     return  parseFloat(n1*n2);
 }
-
+//-------------Funciones para recoger botones-------------//
 function calculadoraSuma() {
     const forma=document.getElementById('formulario');
     const n1 = parseFloat(formulario['primerDigito'].value);
