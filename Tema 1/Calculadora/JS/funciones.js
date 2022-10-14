@@ -2,13 +2,13 @@ function suma(n1,n2) {
     if ((isNaN(n1)) || (isNaN(n2))) {
         throw new Error("No son números")
     }
-    return parseInt(n1+n2);
+    return parseFloat(n1+n2);
 }
 function resta(n1,n2) {
     if ((isNaN(n1)) || (isNaN(n2))) {
         throw new Error("No son números")
     }
-    return n1-n2;
+    return parseFloat(n1-n2);
 }
 function division(n1,n2) {
     if ((isNaN(n1)) || (isNaN(n2))) {
@@ -18,19 +18,19 @@ function division(n1,n2) {
     } else if(n2==0){
         throw new Error("No se puede dividir entre 0");
     }
-    return n1/n2;
+    return  parseFloat(n1/n2);
 }
 function multiplicacion(n1,n2) {
     if ((isNaN(n1)) || (isNaN(n2))) {
         throw new Error("No son números");
     }
-    return n1*n2;
+    return  parseFloat(n1*n2);
 }
 
 function calculadoraSuma() {
     const forma=document.getElementById('formulario');
-    const n1 = parseInt(formulario['primerDigito'].value);
-    const n2 = parseInt(formulario['segundoDigito'].value);
+    const n1 = parseFloat(formulario['primerDigito'].value);
+    const n2 = parseFloat(formulario['segundoDigito'].value);
     
     try {
         document.getElementById('resultado').value=`${suma(n1,n2)}`;                
@@ -41,8 +41,8 @@ function calculadoraSuma() {
 }
 function calculadoraResta() {
     const forma=document.getElementById('formulario');
-    const n1 = parseInt(formulario['primerDigito'].value);
-    const n2 = parseInt(formulario['segundoDigito'].value);
+    const n1 = parseFloat(formulario['primerDigito'].value);
+    const n2 = parseFloat(formulario['segundoDigito'].value);
     try {
         document.getElementById('resultado').value=`${resta(n1,n2)}`;                
     } catch (error) {
@@ -52,8 +52,8 @@ function calculadoraResta() {
 }
 function calculadoraDivi() {
     const forma=document.getElementById('formulario');
-    const n1 = parseInt(formulario['primerDigito'].value);
-    const n2 = parseInt(formulario['segundoDigito'].value);
+    const n1 = parseFloat(formulario['primerDigito'].value);
+    const n2 = parseFloat(formulario['segundoDigito'].value);
 
     try {
         document.getElementById('resultado').value=`${division(n1,n2)}`;                
@@ -64,8 +64,8 @@ function calculadoraDivi() {
 }
 function calculadoraMulti() {
     const forma=document.getElementById('formulario');
-    const n1 = parseInt(formulario['primerDigito'].value);
-    const n2 = parseInt(formulario['segundoDigito'].value);
+    const n1 = parseFloat(formulario['primerDigito'].value);
+    const n2 = parseFloat(formulario['segundoDigito'].value);
 
     try {
         document.getElementById('resultado').value=`${multiplicacion(n1,n2)}`;                
