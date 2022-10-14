@@ -204,6 +204,19 @@ div.wrapper{
     background-color: #FDC609;
     color: #131313;
 }
+#intro button.mio{
+    background-color: #131313;
+    color: #FDC609;
+    border: 2px solid #FDC609;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;  
+}
+#intro button:hover.mio{
+    background-color: #FDC609;
+    color: #131313;
+}
 
 /*------------------------------------------Footer-----------------------------------------*/
 
