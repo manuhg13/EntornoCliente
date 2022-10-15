@@ -1,21 +1,25 @@
-const meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+const meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio",
+"Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 let i=0;
+let j=0;
 
 function quitaPon() {
     if (i==meses.length) {
-        i=0;
         quitarMeses();
+        if (j==meses.length) {
+            i=0;
+        }
     }else{
+        j=0
         escribirMeses();
     }
 }
 
 function quitarMeses() {
     const ul = document.getElementById("lista");
-    const li= document.getElementById("li");
-    li.appendChild(document.createTextNode(meses[i]));
-    const borrar= document.getElementById(meses[i]);
-    ul.removeChild(borrar);
+    let li=document.getElementById(meses[j]);
+    ul.removeChild(li);
+    j++
 }
 
 function escribirMeses() {  
@@ -24,5 +28,7 @@ function escribirMeses() {
     li.setAttribute('id',meses[i])
     li.appendChild(document.createTextNode(meses[i]));
     ul.appendChild(li);
+    console.log(i);
     i++;  
+    console.log(meses.length);
 }
