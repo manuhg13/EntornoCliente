@@ -2,13 +2,14 @@ let verde= document.getElementById('verde');
 let rojo= document.getElementById('rojo');
 let pulVerde=0;
 let pulRojo=0;
+rojo.appendChild(document.createTextNode(pulRojo));
+verde.appendChild(document.createTextNode(pulVerde));
+
+
 function masVerde() {
-    document.createTextNode(pulVerde++);
-    verde.replaceChild(pulVerde);  
+    verde.innerHTML++; 
 }
 
 function masRojo() {
-    pulRojo++;
-    rojo.removeChild(rojo.nodeValue);
-    rojo.appendChild(document.createTextNode(pulRojo));
+    rojo.innerHTML++;
 }
