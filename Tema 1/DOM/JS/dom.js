@@ -22,3 +22,20 @@ console.log(document.querySelectorAll('input'));
 let inputs= document.getElementsByTagName('INPUTS');
 console.log(inputs.getElementByName("sexo"));
 
+//----------Ejercicio 2-------------------------//
+
+//1. El primer párrafo que hay dentro del <div> 'lipsum'
+let primeroP= divs.firstChild;
+console.log(primeroP);
+
+//2. El segundo párrafo de 'lipsum'
+let segundoP=divs.nextElementSibling;
+console.log(segundoP);
+
+//3. El último item de la lista 
+let lista = document.querySelector('ul');
+console.log(lista.lastChild);
+
+
+
+
