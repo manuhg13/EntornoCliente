@@ -4,6 +4,7 @@ verde.style.backgroundColor="green";
 verde.style.display="block";
 verde.style.color="white";
 let pulVerde=0;
+document.appendChild(verde);
 
 //----------------------------------
 
@@ -13,6 +14,7 @@ rojo.style.display="block";
 rojo.style.backgroundColor="red";
 rojo.style.color="white";
 let pulRojo=0;
+document.appendChild(rojo);
 
 function masVerde() {
     pulVerde++;
