@@ -7,11 +7,11 @@ body{
     font-size: 14px;
     font-family: verdana, Arial, Helvetica, sans-serif;
     background-color: #131313;
-    color: #969393;  
+    color: #893eff;  
 }
 
 h1, h2, text{
-    color: #969393;  
+    color: #893eff;  
     margin-left: 20px;
 
 }
@@ -45,10 +45,10 @@ div.wrapper{
 #header{
     display:block; 
     position:relative; 
-    width: 1750px; 
+    width: 100%; 
     margin:0 auto; 
     padding:5px 20px 15px 20px; 
-    color:#DBDBDB; 
+    color:#893eff; 
     background-color:#232323; 
 }
 #header #logo{
@@ -69,19 +69,21 @@ div.wrapper{
     text-transform:uppercase;
 }
 #header h1 a{
-    color:#DBDBDB; 
+    color:#893eff; 
     background-color:#232323;
+    text-decoration: none;
 }
 #header #topnav{
     display:block; 
     float:right; 
-    width:1000px; 
+    width:900px; 
     margin:50px 0 0 0; 
     padding:0; 
     font-size:15px;  
     text-align:right;
 }
-#header ul{margin:0; 
+#header ul{
+    margin:0; 
     padding:0; 
     list-style:none;
 }
@@ -94,14 +96,14 @@ div.wrapper{
     padding:0 3px 10px 3px; 
     border: none;
     text-decoration: none;
-    color:#FFFFFF; 
+    color:#e8e9d8; 
     background-color:#232323;
     display: inline-block; 
 }
 #header li a:hover, #header li.active a{
-    color:#FDC609; 
+    color:#A5D825; 
     background-color:#232323; 
-    border-bottom-color:#FDC609;
+    border-bottom-color:#A5D825;
 }
 #header #topnav li.last{
     margin-right:0;
@@ -125,7 +127,7 @@ div.wrapper{
     height:280px; 
     padding:10px; 
     color:#333333; 
-    background-color:#FDC609;
+    background-color:#A5D825;
 }
 #latest .fl_right{
     display:block; 
@@ -187,27 +189,27 @@ div.wrapper{
 }
 #intro h2{
     padding-bottom:8px; 
-    color:#FFFFFF; 
+    color:#893eff; 
     background-color:#131313;
     border-bottom: 1px dotted #4C4C4C;
 }
 #intro a:link, a:visited{
     background-color: #131313;
-    color: #FDC609;
-    border: 2px solid #FDC609;
+    color: #A5D825;
+    border: 2px solid #A5D825;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;  
 }
 #intro a:hover, a:active{
-    background-color: #FDC609;
+    background-color: #A5D825;
     color: #131313;
 }
 button{
     background-color: #131313;
-    color: #FDC609;
-    border: 2px solid #FDC609;
+    color: #A5D825;
+    border: 2px solid #A5D825;
     padding: 10px 20px;
     margin: 5px;
     text-align: center;
@@ -215,7 +217,7 @@ button{
     display: inline-block;  
 }
 button:hover{
-    background-color: #FDC609;
+    background-color: #A5D825;
     color: #131313;
 }
 
@@ -224,7 +226,7 @@ button:hover{
 #footer{
     display:block; 
     position:relative; 
-    width:1750px; 
+    width:100%; 
     margin:0 auto; 
     padding:20px;
     margin-top: 50px;
