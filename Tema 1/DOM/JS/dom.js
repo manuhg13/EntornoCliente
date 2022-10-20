@@ -58,9 +58,3 @@ console.log(radios[0].value);
 console.log(document.querySelector('input[name="sexo"]:checked').value); 
 
 
-
-
-
-
-
-
