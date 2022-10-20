@@ -19,7 +19,7 @@ function quitarMeses() {
     const ul = document.getElementById("lista");
     let li=document.getElementById(meses[j]);
     ul.removeChild(li);
-    j++
+    j++;
 }
 
 function escribirMeses() {  
@@ -28,7 +28,6 @@ function escribirMeses() {
     li.setAttribute('id',meses[i])
     li.appendChild(document.createTextNode(meses[i]));
     ul.appendChild(li);
-    console.log(i);
     i++;  
     console.log(meses.length);
 }
