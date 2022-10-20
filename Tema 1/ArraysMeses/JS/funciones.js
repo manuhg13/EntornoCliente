@@ -2,9 +2,9 @@ const meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio",
 "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 let i=0;
 let j=0;
-
 function quitaPon() {
     if (i==meses.length) {
+
         quitarMeses();
         if (j==meses.length) {
             i=0;
