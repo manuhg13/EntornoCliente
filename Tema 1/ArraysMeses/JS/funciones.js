@@ -29,5 +29,4 @@ function escribirMeses() {
     li.appendChild(document.createTextNode(meses[i]));
     ul.appendChild(li);
     i++;  
-    console.log(meses.length);
 }
