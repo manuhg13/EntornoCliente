@@ -2,16 +2,26 @@ const meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio",
 "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 let i=0;
 let j=0;
+let boton=document.getElementById('boton');
+boton.innerHTML="Añadir";
 function quitaPon() {
     if (i==meses.length) {
-
+        boton.innerHTML="Quitar";
         quitarMeses();
         if (j==meses.length) {
             i=0;
         }
     }else{
+        boton.innerHTML="Añadir";
         j=0
         escribirMeses();
+    }
+    
+    if (i==12){
+        boton.innerHTML="Quitar";
+    } else if(i==0) {
+        boton.innerHTML="Añadir";
+
     }
 }
 
