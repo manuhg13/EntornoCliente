@@ -1,61 +1,33 @@
+
 function pintarRombo() {
 
-    let filas=parseInt(document.getElementById('filas').value);
-    let arriba=(filas/2)+1;
-    let abajo=filas-arriba;
-
-    let parrafo=document.createElement('pre');
-    let salto=document.createElement('br');
+    const filas=parseInt(document.getElementById('filas').value);
     
 
-
-    /*for (let i=1; i <= arriba ; i++) {
-        let linea='';
-        for (let espacios=1; espacios<=arriba-i; espacios++) { 
-            linea+=" ";
+    for (i=1; i <= filas ; i++) { 
+        for (let espacios=1; espacios<=filas-i; espacios++) { 
+            document.body.innerHTML+="&nbsp;&nbsp";
         }
         for (let asteriscos=1; asteriscos <=(i*2)-1; asteriscos++) {    
-            linea+="*";
-        } 
-        document.body.appendChild(salto);
-        document.body.appendChild(parrafo.appendChild(document.createTextNode(linea)));
-    }
-    for (let i=abajo; i >= 1 ; i--) { 
-        let linea='';
-        for (let espacios=1; espacios<=3-i; espacios++) { 
-            linea+=" ";
-        }
-        for (let asteriscos=1; asteriscos <=(i*2)-1; asteriscos++) {    
-            linea+="*";
-        } 
-        document.body.appendChild(salto);
-        document.body.appendChild(parrafo.appendChild(document.createTextNode(linea)));
-    }*/
-
-    for (i=1; i <= arriba ; i++) { 
-        for (let espacios=1; espacios<=arriba-i; espacios++) { 
-            document.innerHTML+="&nbsp;&nbsp";
-        }
-        for (let asteriscos=1; asteriscos <=(i*2)-1; asteriscos++) {    
-            if (asteriscos==1 || asteriscos==($i*2-1)) {
-                document.innerHTML+="*";
+            if (asteriscos==1 || asteriscos==(i*2)-1) {
+                document.body.innerHTML+="*";
             }else {
-                document.innerHTML+="&nbsp;&nbsp;";
+                document.body.innerHTML+="&nbsp;&nbsp;";
             }        
         } 
-        document.innerHTML+="<br>";
+        document.body.innerHTML+="<br>";
     }
-    for (let i=abajo; i >= 1 ; i--) { 
-        for (let espacios=1; espacios<=3-i; espacios++) { 
-            document.innerHTML+="&nbsp;&nbsp";
+    for (let i=filas; i >= 1 ; i--) { 
+        for (let espacios=1; espacios<=filas-i; espacios++) { 
+            document.body.innerHTML+="&nbsp;&nbsp";
         }
         for (let asteriscos=1; asteriscos <=(i*2)-1; asteriscos++) {    
-            if (asteriscos==1 || asteriscos==(i*2-1)) {
-                document.innerHTML+="*";
+            if (asteriscos==1 || asteriscos==(i*2)-1) {
+                document.body.innerHTML+="*";
             }else {
-                document.innerHTML+="&nbsp;&nbsp;";
+                document.body.innerHTML+="&nbsp;&nbsp;";
             }
         } 
-        document.innerHTML+="<br>";
+        document.body.innerHTML+="<br>";
     }
 }
