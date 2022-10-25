@@ -8,7 +8,7 @@ function pintarRombo() {
         arriba=filas/2;
         abajo=filas/2;
     }else {
-        arriba=(filas/2)+1;
+        arriba=parseInt(filas/2)+1;
         abajo=filas/2;
     }
     const div= document.getElementById('aqui');
@@ -18,7 +18,7 @@ function pintarRombo() {
     }
     
 
-    for (i=1; i <= arriba/2 +1 ; i++) { 
+    for (i=1; i <= arriba ; i++) { 
         for (let espacios=1; espacios<=arriba-i; espacios++) { 
             div.innerHTML+="&nbsp;&nbsp";
         }
@@ -31,7 +31,7 @@ function pintarRombo() {
         } 
         div.innerHTML+="<br>";
     }
-    for (let i=abajo; i >= 1 ; i--) { 
+    for (let i=abajo; i >= 0 ; i--) { 
         for (let espacios=1; espacios<=abajo-i; espacios++) { 
             div.innerHTML+="&nbsp;&nbsp";
         }
