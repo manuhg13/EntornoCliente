@@ -9,7 +9,7 @@ function pintarRombo() {
         abajo=filas/2;
     }else {
         arriba=parseInt(filas/2)+1;
-        abajo=filas/2;
+        abajo=arriba-1;
     }
     const div= document.getElementById('aqui');
    
@@ -18,7 +18,7 @@ function pintarRombo() {
     }
     
 
-    for (i=1; i <= arriba ; i++) { 
+    for (let i=1; i <= arriba ; i++) { 
         for (let espacios=1; espacios<=arriba-i; espacios++) { 
             div.innerHTML+="&nbsp;&nbsp";
         }
