@@ -31,7 +31,7 @@ function pintarRombo() {
         } 
         div.innerHTML+="<br>";
     }
-    for (let i=abajo; i >= 0 ; i--) { 
+    for (let i=abajo; i >= 1 ; i--) { 
         for (let espacios=1; espacios<=abajo-i; espacios++) { 
             div.innerHTML+="&nbsp;&nbsp";
         }
