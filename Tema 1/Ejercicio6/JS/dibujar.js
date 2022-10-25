@@ -1,20 +1,26 @@
 function pintarRombo() {
-    for (i=1; $i <= rombo ; $i++) {
-        for ($espacios=1; $espacios<=$rombo-$i; $espacios++) { 
-            echo "&nbsp;&nbsp";
+
+    let filas=parseInt(document.getElementById('filas').value);
+    let arriba=(filas/2)+1;
+    let abajo=filas-arriba;
+
+    for (let i=1; i <= arriba ; $i++) {
+
+        for (let espacios=1; espacios<=arriba-i; espacios++) { 
+           document.write("&nbsp;&nbsp");
         }
-        for ($asteriscos=1; $asteriscos <=($i*2)-1; $asteriscos++) {    
-            echo "*";
+        for (let asteriscos=1; asteriscos <=(i*2)-1; asteriscos++) {    
+            document.write("*");
         } 
-        echo "<br>";
+        document.writeln;
     }
-    for ($i=2; $i >= 1 ; $i--) { 
-        for ($espacios=1; $espacios<=3-$i; $espacios++) { 
-            echo "&nbsp;&nbsp";
+    for (let i=abajo; i >= 1 ; i--) { 
+        for (let espacios=1; espacios<=3-$i; espacios++) { 
+            document.write("&nbsp;&nbsp");
         }
-        for ($asteriscos=1; $asteriscos <=($i*2)-1; $asteriscos++) {    
-            echo "*";
+        for (let asteriscos=1; asteriscos <=(i*2)-1; asteriscos++) {    
+            document.write("*");
         } 
-        echo "<br>";
+        document.writeln;
     }
 }
