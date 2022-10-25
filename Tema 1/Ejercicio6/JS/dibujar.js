@@ -1,15 +1,16 @@
-pintarRombo();
+
 function pintarRombo() {
 
     const filas=parseInt(document.getElementById('filas').value);
-    const div= document.createElement('div');
-
+    const arriba=(filas/2)+1;
+    const div= document.getElementById('aqui');
+   
     if(div.innerHTML != "" ){
         div.innerHTML="";
     }
     
 
-    for (i=1; i <= filas ; i++) { 
+    for (i=1; i <= filas/2 +1 ; i++) { 
         for (let espacios=1; espacios<=filas-i; espacios++) { 
             div.innerHTML+="&nbsp;&nbsp";
         }
