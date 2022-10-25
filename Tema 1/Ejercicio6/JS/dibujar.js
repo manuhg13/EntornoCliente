@@ -20,7 +20,7 @@ function pintarRombo() {
                 div.innerHTML+="&nbsp;&nbsp;";
             }        
         } 
-        document.body.innerHTML+="<br>";
+        div.innerHTML+="<br>";
     }
     for (let i=filas; i >= 1 ; i--) { 
         for (let espacios=1; espacios<=filas-i; espacios++) { 
@@ -30,7 +30,7 @@ function pintarRombo() {
             if (asteriscos==1 || asteriscos==(i*2)-1) {
                 div.innerHTML+="*";
             }else {
-                document.body.innerHTML+="&nbsp;&nbsp;";
+                div.innerHTML+="&nbsp;&nbsp;";
             }
         } 
         div.innerHTML+="<br>";
