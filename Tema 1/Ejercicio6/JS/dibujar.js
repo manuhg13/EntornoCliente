@@ -7,20 +7,20 @@ function pintarRombo() {
     for (let i=1; i <= arriba ; $i++) {
 
         for (let espacios=1; espacios<=arriba-i; espacios++) { 
-           document.write("&nbsp;&nbsp");
+           document.innerHTML+="&nbsp;&nbsp";
         }
         for (let asteriscos=1; asteriscos <=(i*2)-1; asteriscos++) {    
-            document.write("*");
+            document.innerHTML+="*";
         } 
-        document.writeln;
+        document.innerHTML+="<br>";
     }
     for (let i=abajo; i >= 1 ; i--) { 
         for (let espacios=1; espacios<=3-$i; espacios++) { 
-            document.write("&nbsp;&nbsp");
+            document.innerHTML+="&nbsp;&nbsp";
         }
         for (let asteriscos=1; asteriscos <=(i*2)-1; asteriscos++) {    
-            document.write("*");
+            document.innerHTML+="*";
         } 
-        document.writeln;
+        document.innerHTML+="<br>";
     }
 }
