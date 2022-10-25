@@ -2,7 +2,15 @@
 function pintarRombo() {
 
     const filas=parseInt(document.getElementById('filas').value);
-    const arriba=(filas/2)+1;
+    let arriba;
+    let abajo;
+    if (filas%2==0){
+        arriba=filas/2;
+        abajo=filas/2;
+    }else {
+        arriba=(filas/2)+1;
+        abajo=filas/2;
+    }
     const div= document.getElementById('aqui');
    
     if(div.innerHTML != "" ){
@@ -10,8 +18,8 @@ function pintarRombo() {
     }
     
 
-    for (i=1; i <= filas/2 +1 ; i++) { 
-        for (let espacios=1; espacios<=filas-i; espacios++) { 
+    for (i=1; i <= arriba/2 +1 ; i++) { 
+        for (let espacios=1; espacios<=arriba-i; espacios++) { 
             div.innerHTML+="&nbsp;&nbsp";
         }
         for (let asteriscos=1; asteriscos <=(i*2)-1; asteriscos++) {    
@@ -23,8 +31,8 @@ function pintarRombo() {
         } 
         div.innerHTML+="<br>";
     }
-    for (let i=filas; i >= 1 ; i--) { 
-        for (let espacios=1; espacios<=filas-i; espacios++) { 
+    for (let i=abajo; i >= 1 ; i--) { 
+        for (let espacios=1; espacios<=abajo-i; espacios++) { 
             div.innerHTML+="&nbsp;&nbsp";
         }
         for (let asteriscos=1; asteriscos <=(i*2)-1; asteriscos++) {    
