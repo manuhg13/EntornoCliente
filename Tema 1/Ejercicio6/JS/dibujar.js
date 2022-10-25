@@ -1,4 +1,4 @@
-
+pintarRombo();
 function pintarRombo() {
 
     const filas=parseInt(document.getElementById('filas').value);
