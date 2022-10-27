@@ -32,8 +32,14 @@ function pintarRombo() {
         div.innerHTML+="<br>";
     }
     for (let i=abajo; i >= 1 ; i--) { 
-        for (let espacios=1; espacios<=abajo-i; espacios++) { 
-            div.innerHTML+="&nbsp;&nbsp";
+        if (filas%2==0) {
+            for (let espacios=1; espacios<=abajo-i; espacios++) { 
+                div.innerHTML+="&nbsp;&nbsp";
+            }           
+        }else{
+            for (let espacios=0; espacios<=abajo-i; espacios++) { 
+                div.innerHTML+="&nbsp;&nbsp";
+            }
         }
         for (let asteriscos=1; asteriscos <=(i*2)-1; asteriscos++) {    
             if (asteriscos==1 || asteriscos==(i*2)-1) {
