@@ -9,7 +9,7 @@ function pintarRombo() {
         abajo=filas/2;
     }else {
         arriba=parseInt(filas/2)+1;
-        abajo=arriba-1;
+        abajo=parseInt(filas/2);;
     }
     const div= document.getElementById('aqui');
    
