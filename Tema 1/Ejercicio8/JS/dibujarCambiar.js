@@ -2,7 +2,7 @@ function ponerHTML() {
     document.getElementsByTagName('html')[0].classList.add('ej8');
 }
 function quitarHTML() {
-    document.getElementsByTagName('html')[0].classList.remove('html');
+    document.getElementsByTagName('html')[0].classList.remove('html.ej8');
 }
 
 
