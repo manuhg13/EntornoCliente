@@ -1,3 +1,10 @@
+function ponerHTML() {
+    document.getElementsByTagName('html')[0].classList.add('html');
+}
+function quitarHTML() {
+    document.getElementsByTagName('html')[0].classList.remove('html');
+}
+
 
 function pintarRombo() {
     //Cogemos los elementos del HTML 
