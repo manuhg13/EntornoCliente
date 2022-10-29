@@ -11,12 +11,13 @@ function quitarCont() {
     document.getElementById('contenedor').classList.remove('contenedor');
 }
 function ponerLetras() {
-   let letras= Array.from(document.querySelectorAll('letras'));
+   let letras= Array.from(document.querySelectorAll('#letras'));
    letras.forEach(elemento => elemento.classList.add('blanco'));
-
+   
 }
 function quitarLetras() {
-    document.getElementById('contenedor').classList.remove('contenedor');
+    let letras= Array.from(document.querySelectorAll('#letras'));
+    letras.forEach(elemento => elemento.classList.remove('blanco'));
 }
 
 
