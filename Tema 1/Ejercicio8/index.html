@@ -8,16 +8,22 @@
     <title>Ejercicio 8 || ManuelHG</title>
 </head>
 <body>
-    <div class="contenedor">
-        <h1>Rombo hueco</h1>
-        <label for="filas" class="filas">Indique el número de filas:</label>
+    <div id="contenedor">
+        <h1 id="letras">Rombo hueco</h1>
+        <label for="filas" id="letras">Indique el número de filas:</label>
         <input type="number" name="filas" id="filas" placeholder="Indica el nº de filas" value="5" min="3" max="23" onchange="pintarRombo()"/>
         <br>
         <div id="aqui" class="rombo"></div>
     </div>
-    <button onclick="quitarHTML()">Quitar</button>
-    <button onclick="ponerHTML()">Poner</button>
+    <button onclick="quitarHTML()">Quitar fondo</button>
+    <button onclick="ponerHTML()">Poner fondo</button>
 
+    <button onclick="quitarCont()">Quitar contenedor</button>
+    <button onclick="ponerCont()">Poner contenerdor</button>
+    
+    <button onclick="quitarLetras()">Quitar letras</button>
+    <button onclick="ponerLetras()">Poner letras</button>
+    
     <script src="JS/dibujarCambiar.js"></script>
 </body>
 </html>

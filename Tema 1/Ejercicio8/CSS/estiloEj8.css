@@ -9,7 +9,7 @@
       linear-gradient(to left, #2196f3, #009688);
 }
 
-h1{
+.blanco{
     color: white;
     padding: 10px;
 }
@@ -29,6 +29,3 @@ h1{
     text-align: left;
 }
 
-.filas{
-    color: white;
-}

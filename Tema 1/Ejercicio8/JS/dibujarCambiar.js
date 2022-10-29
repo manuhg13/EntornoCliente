@@ -2,7 +2,21 @@ function ponerHTML() {
     document.getElementById('ej8').classList.add('ej8');
 }
 function quitarHTML() {
-    document.getElementsByTagName('html')[0].classList.remove('html.ej8');
+    document.getElementById('ej8').classList.remove('ej8');
+}
+function ponerCont() {
+    document.getElementById('contenedor').classList.add('contenedor');
+}
+function quitarCont() {
+    document.getElementById('contenedor').classList.remove('contenedor');
+}
+function ponerLetras() {
+   let letras= Array.from(document.querySelectorAll('letras'));
+   letras.forEach(elemento => elemento.classList.add('blanco'));
+
+}
+function quitarLetras() {
+    document.getElementById('contenedor').classList.remove('contenedor');
 }
 
 
