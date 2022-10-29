@@ -1,15 +1,18 @@
+//----------------------------Funciones para cambiar el CSS ------------------------------//
 function ponerHTML() {
     document.getElementById('ej8').classList.add('ej8');
 }
 function quitarHTML() {
     document.getElementById('ej8').classList.remove('ej8');
 }
+
 function ponerCont() {
     document.getElementById('contenedor').classList.add('contenedor');
 }
 function quitarCont() {
     document.getElementById('contenedor').classList.remove('contenedor');
 }
+
 function ponerLetras() {
    let letras= Array.from(document.querySelectorAll('#letras'));
    letras.forEach(elemento => elemento.classList.add('blanco'));
@@ -19,6 +22,7 @@ function quitarLetras() {
     let letras= Array.from(document.querySelectorAll('#letras'));
     letras.forEach(elemento => elemento.classList.remove('blanco'));
 }
+
 function ponerRombo() {
     document.getElementById('aqui').classList.add('rombo');
 }
@@ -26,6 +30,7 @@ function quitarRombo() {
     document.getElementById('aqui').classList.remove('rombo');
 }
 
+//-------------------------Función para pintar el rombo ------------------------------------//
 
 function pintarRombo() {
     //Cogemos los elementos del HTML 
