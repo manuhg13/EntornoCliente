@@ -23,7 +23,7 @@ function pintarRombo() {
         div.innerHTML="";
     }
     
-    //Comenzamos escribiendo la líneas de arriba 
+
     for (let i=1; i <= arriba ; i++) { 
 
         //En primer lugar, escribiremos los espacios que le separarán del margen 
