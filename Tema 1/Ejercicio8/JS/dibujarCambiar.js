@@ -19,6 +19,12 @@ function quitarLetras() {
     let letras= Array.from(document.querySelectorAll('#letras'));
     letras.forEach(elemento => elemento.classList.remove('blanco'));
 }
+function ponerRombo() {
+    document.getElementById('aqui').classList.add('rombo');
+}
+function quitarRombo() {
+    document.getElementById('aqui').classList.remove('rombo');
+}
 
 
 function pintarRombo() {

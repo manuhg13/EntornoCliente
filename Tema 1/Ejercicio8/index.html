@@ -13,7 +13,7 @@
         <label for="filas" id="letras">Indique el número de filas:</label>
         <input type="number" name="filas" id="filas" placeholder="Indica el nº de filas" value="5" min="3" max="23" onchange="pintarRombo()"/>
         <br>
-        <div id="aqui" class="rombo"></div>
+        <div id="aqui"></div>
     </div>
     <button onclick="quitarHTML()">Quitar fondo</button>
     <button onclick="ponerHTML()">Poner fondo</button>
@@ -23,6 +23,9 @@
     
     <button onclick="quitarLetras()">Quitar letras</button>
     <button onclick="ponerLetras()">Poner letras</button>
+
+    <button onclick="quitarRombo()">Quitar CSS rombo</button>
+    <button onclick="ponerRombo()">Poner CSS rombo</button>
     
     <script src="JS/dibujarCambiar.js"></script>
 </body>
