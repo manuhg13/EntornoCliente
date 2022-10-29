@@ -1,4 +1,4 @@
-html.ej8 {
+.ej8 {
     background-color: #2196f3;
     min-height: 1000px;
     font-family: "helvetica neue";
@@ -22,13 +22,13 @@ h1{
     border-radius: 5px;
 }
 
-div.rombo{
+.rombo{
     color: gold;
     margin: 30px;
     padding: 10px;
     text-align: left;
 }
 
-label.filas{
+.filas{
     color: white;
 }
