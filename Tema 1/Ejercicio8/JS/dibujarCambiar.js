@@ -1,9 +1,7 @@
 //----------------------------Funciones para cambiar el CSS ------------------------------//
-function ponerHTML() {
-    document.getElementById('ej8').classList.add('ej8');
-}
+
 function quitarHTML() {
-    document.getElementById('ej8').classList.remove('ej8');
+    document.getElementById('ej8').classList.toggle('ej8');
 }
 
 function ponerCont() {
@@ -12,22 +10,16 @@ function ponerCont() {
 function quitarCont() {
     document.getElementById('contenedor').classList.toggle('contenedor');
 }
-
-function ponerLetras() {
-   let letras= Array.from(document.querySelectorAll('#letras'));
-   letras.forEach(elemento => elemento.classList.add('blanco'));
-   
-}
 function quitarLetras() {
     let letras= Array.from(document.querySelectorAll('#letras'));
-    letras.forEach(elemento => elemento.classList.remove('blanco'));
+    letras.forEach(elemento => elemento.classList.toggle('blanco'));
 }
 
 function ponerRombo() {
     document.getElementById('aqui').classList.add('rombo');
 }
 function quitarRombo() {
-    document.getElementById('aqui').classList.remove('rombo');
+    document.getElementById('aqui').classList.toggle('rombo');
 }
 
 //-------------------------Función para pintar el rombo ------------------------------------//
