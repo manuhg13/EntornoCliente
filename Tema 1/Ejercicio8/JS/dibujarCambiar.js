@@ -3,20 +3,12 @@
 function quitarHTML() {
     document.getElementById('ej8').classList.toggle('ej8');
 }
-
-function ponerCont() {
-    document.getElementById('contenedor').classList.add('contenedor');
-}
 function quitarCont() {
     document.getElementById('contenedor').classList.toggle('contenedor');
 }
 function quitarLetras() {
     let letras= Array.from(document.querySelectorAll('#letras'));
     letras.forEach(elemento => elemento.classList.toggle('blanco'));
-}
-
-function ponerRombo() {
-    document.getElementById('aqui').classList.add('rombo');
 }
 function quitarRombo() {
     document.getElementById('aqui').classList.toggle('rombo');
