@@ -10,7 +10,7 @@ function ponerCont() {
     document.getElementById('contenedor').classList.add('contenedor');
 }
 function quitarCont() {
-    document.getElementById('contenedor').classList.remove('contenedor');
+    document.getElementById('contenedor').classList.toggle('contenedor');
 }
 
 function ponerLetras() {
