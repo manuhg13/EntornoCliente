@@ -3,3 +3,10 @@ const idTimeout = setTimeout(() => {
 }, 5000);
 
 let i=1;
+const idInterval=setInterval(() => {
+   console.log(`Interval cada 3 seg Ejecucion nº ${i++}`);
+   if (i===5) {
+        clearInterval(idInterval);
+        console.log(`Fin del intervalo`);
+   } 
+}, 3000);
