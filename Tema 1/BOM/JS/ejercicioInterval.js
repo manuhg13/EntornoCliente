@@ -3,11 +3,8 @@ const timer= setTimeout(() => {
     let boton= ventanaNueva.document.createElement("input");
     boton.type="button";
     boton.value="Cierra esta ventana";
-    boton.addEventListener("click",cerrar);
-    ventanaNueva.document.body.appendChild(boton);
-
-    function cerrar() {
+    boton.addEventListener("click",function() {
         ventanaNueva.close();
-    }
-
+    });
+    ventanaNueva.document.body.appendChild(boton);
 }, 2000);
