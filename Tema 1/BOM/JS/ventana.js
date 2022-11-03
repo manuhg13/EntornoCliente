@@ -1,0 +1,1 @@
+const vent= window.open("","","width=500, height=200, left=200,top=200" );
