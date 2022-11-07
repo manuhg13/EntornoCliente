@@ -1,6 +1,6 @@
 .diana{
     text-align: center;
-    height: 40px;
+    height: 80px;
     width: auto;
 }
 .hueco{
@@ -11,8 +11,8 @@
 }
 .redondo{
     background-color: darkorchid;
-    height: 30px;
-    width: 30px;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
     border: solid black  1px;
     position:absolute;

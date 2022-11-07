@@ -21,7 +21,6 @@ function moverDiana() {
     
 }
 
-window.requestAnimationFrame()
 function limita() {
     if (diana.style.left==(carrusel.clientWidth-30)) {
         izquierda=true;
@@ -33,15 +32,39 @@ function limita() {
     moverDiana();
 }*/
 
+let intervalDiana=setInterval(limita,50);
 const diana=document.getElementById('idDiana');
 const carrusel=document.getElementById('carrusel');
 
 let left=0;
 let timer;
 
-timer=setInterval(() => {
+let izquierda;
+let derecha =true;
+
+/*timer=setInterval(function() {
     diana.style.left=(left+=10) +"px";
-    if (left==carrusel.clientWidth-30) {
-        clearInterval(timer);
+    if (left==window.screen.width-50) {
+        clearInterval(timer)
     }
-}, 20);
+}, 50);*/
+
+function limita() {
+    if (left==window.screen.width-50) {
+        izquierda=true;
+        derecha=false;
+    }else if(left==0){
+        derecha= true;
+        izquierda=false;
+    }
+    moverDiana();
+}
+
+function moverDiana() {
+    
+    if (derecha){
+        diana.style.left=(left+=10) +"px";      
+    }else if(izquierda){
+        diana.style.left=(left-=10) +"px";
+    }   
+}
