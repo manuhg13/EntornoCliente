@@ -5,9 +5,12 @@
 }
 .hueco{
     height: 600px;
+    background-color: aquamarine;
 }
 .pistola{
-    height: 30px;
+    text-align: center;
+    height: 60px;
+    background-color: burlywood;
 }
 .redondo{
     background-color: darkorchid;
@@ -16,6 +19,8 @@
     border-radius: 50%;
     border: solid black  1px;
     position:absolute;
-    
-    
+}
+.balon{
+    font-size: 40px;
+    position:absolute;
 }
