@@ -1,0 +1,8 @@
+table{
+    margin: auto;
+}
+td{
+    width: 175px;
+    height: 175px;
+    text-align: center;
+}
