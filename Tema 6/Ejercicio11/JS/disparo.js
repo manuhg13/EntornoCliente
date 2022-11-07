@@ -3,3 +3,5 @@ function moverDiana() {
         
     }, 50);
 }
+
+let diana=document.getElementById
