@@ -9,9 +9,11 @@
     height: 30px;
 }
 .redondo{
+    background-color: darkorchid;
     height: 30px;
     width: 30px;
     border-radius: 50%;
     border: solid black  1px;
+    position:absolute;
     
 }

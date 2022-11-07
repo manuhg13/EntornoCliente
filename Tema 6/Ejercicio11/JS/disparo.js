@@ -4,4 +4,5 @@ function moverDiana() {
     }, 50);
 }
 
-let diana=document.getElementById
+let diana=document.getElementById('idDiana');
+diana.addEventListener('')
