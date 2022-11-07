@@ -1,20 +1,47 @@
-let xDiana=50;
+/*let xDiana=0;
 let velocidad=10;
-let pasoDerecha;
-let pasoIzq;
 
-let intervalDiana=setInterval(moverDiana,50);
-if (document.getElementById('idDiana').style.left==window.innerWidth){
-    pasoIzq=true;
-}else if(document.getElementById('idDiana').style.left==0){
-    pasoDerecha=true;
-}
+let izquierda;
+let derecha;
+
+let intervalDiana=setInterval(limita,50);
+const diana=document.getElementById('idDiana');
+const carrusel=document.getElementById('carrusel');
 
 function moverDiana() {
-    xDiana+=velocidad;
-    document.getElementById('idDiana').style.left=`${xDiana}px`;
+    
+    if (derecha=true){
+        xDiana+=velocidad;
+        diana.style.left=`${xDiana}px`;      
+    }else if(izquierda=true){
+        xDiana-=velocidad;
+        diana.style.left=`${xDiana}px`;
+    }
     
     
 }
-console.log(document.getElementById('carrusel').style.width);
 
+window.requestAnimationFrame()
+function limita() {
+    if (diana.style.left==(carrusel.clientWidth-30)) {
+        izquierda=true;
+        derecha=false;
+    }else if(diana.style.left==0){
+        derecha= true;
+        izquierda=false;
+    }
+    moverDiana();
+}*/
+
+const diana=document.getElementById('idDiana');
+const carrusel=document.getElementById('carrusel');
+
+let left=0;
+let timer;
+
+timer=setInterval(() => {
+    diana.style.left=(left+=10) +"px";
+    if (left==carrusel.clientWidth-30) {
+        clearInterval(timer);
+    }
+}, 20);
