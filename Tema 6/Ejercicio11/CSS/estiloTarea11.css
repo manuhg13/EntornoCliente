@@ -5,9 +5,11 @@
 }
 .hueco{
     background-image: url(penal.jpg);
+    background-position: bottom;
     background-repeat: no-repeat;
+    background-size: contain;
     height: 600px;
-    background-color: aquamarine;
+    background-color: #58be7d;
 }
 .pistola{
     text-align: center;
@@ -15,14 +17,18 @@
     background-color: burlywood;
 }
 .redondo{
-    background-color: darkorchid;
+    font-size: 50px;
     height: 50px;
     width: 50px;
-    border-radius: 50%;
-    border: solid black  1px;
+    text-align: left;
     position:absolute;
 }
 .balon{
     font-size: 40px;
     position:absolute;
+}
+.porteria{
+    font-size: 50px;
+    position:absolute;
+    text-align: center;  
 }
