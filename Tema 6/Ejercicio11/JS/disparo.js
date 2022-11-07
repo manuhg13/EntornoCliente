@@ -1,8 +1,8 @@
+let xDiana=50;
+let velocidad=10;
 function moverDiana() {
-    setInterval(() => {
-        
-    }, 50);
+    xDiana+=velocidad,
+    document.getElementById('idDiana').style.left=`${xDiana}px`
 }
 
-let diana=document.getElementById('idDiana');
-diana.addEventListener('')
+let intervalDiana=setInterval(moverDiana,50);
