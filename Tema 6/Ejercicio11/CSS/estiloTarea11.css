@@ -4,6 +4,8 @@
     width: auto;
 }
 .hueco{
+    background-image: url(penal.jpg);
+    background-repeat: no-repeat;
     height: 600px;
     background-color: aquamarine;
 }
