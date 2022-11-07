@@ -11,15 +11,9 @@ if (document.getElementById('idDiana').style.left==window.innerWidth){
 }
 
 function moverDiana() {
-    if (pasoDerecha) {
-        xDiana+=velocidad;
-        document.getElementById('idDiana').style.left=`${xDiana}px`;
-        pasoIzq=false;
-    }else if(pasoIzq){
-        xDiana-=velocidad;
-        document.getElementById('idDiana').style.left=`${xDiana}px`;
-        pasoDerecha=false;
-    }
+    xDiana+=velocidad;
+    document.getElementById('idDiana').style.left=`${xDiana}px`;
+    
     
 }
 console.log(document.getElementById('carrusel').style.width);
