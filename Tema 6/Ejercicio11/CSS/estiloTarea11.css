@@ -1,4 +1,5 @@
 .diana{
+    text-align: center;
     height: 40px;
 }
 .hueco{
@@ -7,5 +8,6 @@
 .pistola{
     height: 30px;
 }
-
-
+.redondo{
+    border-radius: 50%;
+}
