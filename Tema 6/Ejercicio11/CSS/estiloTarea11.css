@@ -1,5 +1,7 @@
 .diana{
-    text-align: center;
+    display: flex;
+    align-content: center;
+    flex-flow: row;
     height: 40px;
     width: auto;
 }
@@ -17,11 +19,11 @@
     background-color: burlywood;
 }
 .balon{
-    font-size: 40px;
+    font-size: 30px;
     position:absolute;
 }
 .porteria{
     font-size: 40px;
     position:absolute;
-    text-align: center;  
+    align-content: ;
 }
