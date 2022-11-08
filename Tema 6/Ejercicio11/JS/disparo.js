@@ -1,6 +1,6 @@
 
 let intervalDiana=setInterval(limita,50);
-const diana=document.getElementById('idDiana');
+const diana=document.getElementById('idPorteria');
 const carrusel=document.getElementById('carrusel');
 
 let left=0;
