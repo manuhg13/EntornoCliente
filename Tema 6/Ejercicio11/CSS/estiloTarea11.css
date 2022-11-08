@@ -1,6 +1,6 @@
 .diana{
+    background-color: antiquewhite;
     display: flex;
-    align-content: center;
     flex-flow: row;
     height: 40px;
     width: auto;
@@ -24,6 +24,9 @@
 }
 .porteria{
     font-size: 40px;
+    height: 40px;
     position:absolute;
-    align-content: ;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
 }
