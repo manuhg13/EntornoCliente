@@ -7,6 +7,8 @@ const balon= document.getElementById('idBalon');
 let left=0;
 let timer;
 
+let xBalon= document.documentElement.clientWidth/2;
+balon.style.left=`${xBalon}px`;
 let posicionBalon= getComputedStyle(balon,null).getPropertyValue('left').slice(0,-2);
 
 let izquierda;
