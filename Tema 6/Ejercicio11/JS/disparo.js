@@ -2,6 +2,7 @@
 let intervalDiana=setInterval(limita,50);
 const diana=document.getElementById('idPorteria');
 const carrusel=document.getElementById('carrusel');
+const balon= document.getElementById('idBalon');
 
 let left=0;
 let timer;
@@ -20,8 +21,12 @@ function limita() {
     moverDiana();
 }
 
+balon.addEventListener('keydown',function(e) {
+    if (e.key=="ArrowRight") {
+        balon.style.right+=10 + "px";
+    }
+})
 function moverDiana() {
-    
     if (derecha){
         diana.style.left=(left+=10) +"px";      
     }else if(izquierda){
