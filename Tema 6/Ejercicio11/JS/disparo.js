@@ -1,5 +1,5 @@
 
-let intervalDiana=setInterval(limita,50);
+let intervalDiana=setInterval(limita,30);
 const diana=document.getElementById('idPorteria');
 const carrusel=document.getElementById('carrusel');
 const balon= document.getElementById('idBalon');
@@ -8,7 +8,7 @@ let left=0;
 let timer;
 
 let xBalon= document.documentElement.clientWidth/2;
-let yBalon= flecha.style.top;
+let yBalon= getComputedStyle(balon,null).getPropertyValue('top').slice(0,-2);
 balon.style.left=`${xBalon}px`;
 //let posicionBalon= getComputedStyle(balon,null).getPropertyValue('left').slice(0,-2);
 
@@ -26,12 +26,24 @@ function limita() {
     moverDiana();
 }
 
+function chutar() {
+    setInterval(() => {
+        yBalon-=10;
+        balon.style.top=`${yBalon}px`;
+
+        if(yBalon==100){
+            balon.style.top="0px"
+        }
+
+    }, 50);
+}
+
 document.addEventListener('keydown',function(e) {
     console.log(e);
     switch (e.key) {
         case "ArrowRight":
             xBalon+=10;
-            balon.style.left+=`${xBalon}px`;
+            balon.style.left=`${xBalon}px`;
             break;
     
         case "ArrowLeft":
@@ -39,15 +51,14 @@ document.addEventListener('keydown',function(e) {
             balon.style.left=`${xBalon}px`;
             break;
     
+        case "ArrowUp":
+            chutar();
+            break;
+    
         default:
             break;
     }
-    /*if (e.key=="ArrowRight") {
-       
-    }
-    if (e.key == "ArrowLeft") {
-       
-    }*/
+    
 })
 function moverDiana() {
     if (derecha){
