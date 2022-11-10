@@ -8,8 +8,9 @@ let left=0;
 let timer;
 
 let xBalon= document.documentElement.clientWidth/2;
+let yBalon= flecha.style.top;
 balon.style.left=`${xBalon}px`;
-let posicionBalon= getComputedStyle(balon,null).getPropertyValue('left').slice(0,-2);
+//let posicionBalon= getComputedStyle(balon,null).getPropertyValue('left').slice(0,-2);
 
 let izquierda;
 let derecha =true;
@@ -27,13 +28,26 @@ function limita() {
 
 document.addEventListener('keydown',function(e) {
     console.log(e);
-    if (e.key=="ArrowRight") {
-        xBalon+=10;
-        balon.style.left+=`${xBalon}px `;
-    }else if (e.key == "ArrowLeft") {
-        xBalon-=10;
-        balon.style.left=`${xBalon}px`;
+    switch (e.key) {
+        case "ArrowRight":
+            xBalon+=10;
+            balon.style.left+=`${xBalon}px`;
+            break;
+    
+        case "ArrowLeft":
+            xBalon-=10;
+            balon.style.left=`${xBalon}px`;
+            break;
+    
+        default:
+            break;
     }
+    /*if (e.key=="ArrowRight") {
+       
+    }
+    if (e.key == "ArrowLeft") {
+       
+    }*/
 })
 function moverDiana() {
     if (derecha){
