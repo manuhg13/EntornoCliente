@@ -29,10 +29,10 @@ document.addEventListener('keydown',function(e) {
     console.log(e);
     if (e.key=="ArrowRight") {
         posicionBalon+=10;
-        balon.style.left+=`${posicionBalon}px `;
+        balon.style.left+=`${xBalon}px `;
     }else if (e.key == "ArrowLeft") {
         posicionBalon-=10;
-        balon.style.left=`${posicionBalon}px`;
+        balon.style.left=`${xBalon}px`;
     }
 })
 function moverDiana() {
