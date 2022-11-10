@@ -28,10 +28,10 @@ function limita() {
 document.addEventListener('keydown',function(e) {
     console.log(e);
     if (e.key=="ArrowRight") {
-        posicionBalon+=10;
+        xBalon+=10;
         balon.style.left+=`${xBalon}px `;
     }else if (e.key == "ArrowLeft") {
-        posicionBalon-=10;
+        xBalon-=10;
         balon.style.left=`${xBalon}px`;
     }
 })
