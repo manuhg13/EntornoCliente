@@ -16,7 +16,7 @@ let izquierda;
 let derecha =true;
 
 function limita() {
-    if (left==document.documentElement.clientWidth-50) {
+    if (left==window.screen.width-50) {
         izquierda=true;
         derecha=false;
     }else if(left==0){
@@ -26,7 +26,7 @@ function limita() {
     moverDiana();
 }
 
-let tiro;
+
 
 function acierto() {
     let posiPorteria= porteria.getBoundingClientRect();
@@ -56,11 +56,13 @@ function chutar() {
     }
 
     if (acierto()){
-        (document).ready(function() {
-            let suu = new Audio("../")
-        })
-        clearInterval(intervalDiana);
+        balon.style.top="720px"
+        //clearInterval(intervalDiana);
         clearInterval(tiro);
+        (document).ready(function() {
+            let suu = new Audio("../Sonidos/suuu.wav");
+            suu.play();
+        });
     }
 }
 
@@ -78,7 +80,7 @@ document.addEventListener('keydown',function(e) {
             break;
     
         case "ArrowUp":
-            tiro= setInterval(chutar,50);
+            let tiro= setInterval(chutar,50);
             break;
     
         default:
