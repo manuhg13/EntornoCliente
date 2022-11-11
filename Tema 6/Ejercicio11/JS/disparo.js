@@ -56,6 +56,9 @@ function chutar() {
     }
 
     if (acierto()){
+        (document).ready(function() {
+            let suu = new Audio("../")
+        })
         clearInterval(intervalDiana);
         clearInterval(tiro);
     }
