@@ -53,7 +53,10 @@ function desplazarBalon() {
             document.getElementById("CR7").play();
             clearInterval(intervaloBalon);
             clearInterval(intervaloPorteria);
+        }  
+    }else{
+        if (sonidoActivo){
+            document.getElementById("fuera").play();
         }
-        
     }
 }
