@@ -27,15 +27,18 @@ function limita() {
 }
 
 function chutar() {
-    setInterval(() => {
+    disparado=true;
+    let tiro =setInterval(() => {
         yBalon-=10;
         balon.style.top=`${yBalon}px`;
 
-        if(yBalon==100){
-            balon.style.top="0px"
+        if(yBalon < 0){
+            clearInterval(tiro);
         }
 
     }, 50);
+
+    balon.style.top="720px"
 }
 
 document.addEventListener('keydown',function(e) {
