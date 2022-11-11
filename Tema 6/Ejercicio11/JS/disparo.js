@@ -1,6 +1,6 @@
 
-let intervalDiana=setInterval(limita,30);
-const diana=document.getElementById('idPorteria');
+let intervalDiana=setInterval(limita,50);
+const porteria=document.getElementById('idPorteria');
 const carrusel=document.getElementById('carrusel');
 const balon= document.getElementById('idBalon');
 
@@ -16,7 +16,7 @@ let izquierda;
 let derecha =true;
 
 function limita() {
-    if (left==window.screen.width-50) {
+    if (left==document.documentElement.clientWidth-50) {
         izquierda=true;
         derecha=false;
     }else if(left==0){
@@ -26,23 +26,43 @@ function limita() {
     moverDiana();
 }
 
+let tiro;
+
+function acierto() {
+    let posiPorteria= porteria.getBoundingClientRect();
+    let posiBalon= balon.getBoundingClientRect();
+
+    console.log(posiBalon);
+    console.log(posiPorteria);
+
+    if ((posiPorteria.x + posiPorteria.width) > posiBalon.x && posiBalon.y < posiPorteria.bottom &&
+    posiPorteria.x < (posiBalon.x + posiBalon.width) ) {
+        return true;
+        
+    }
+
+    return false;
+}
+
+
 function chutar() {
     disparado=true;
-    let tiro =setInterval(() => {
-        yBalon-=10;
-        balon.style.top=`${yBalon}px`;
+    yBalon-=10;
+    balon.style.top=`${yBalon}px`;
+    if(yBalon < 0){
+        balon.style.top="720px"
+        clearInterval(tiro);
+        comenzar();         
+    }
 
-        if(yBalon < 0){
-            clearInterval(tiro);
-        }
-
-    }, 50);
-
-    balon.style.top="720px"
+    if (acierto()){
+        clearInterval(intervalDiana);
+        clearInterval(tiro);
+    }
 }
 
 document.addEventListener('keydown',function(e) {
-    console.log(e);
+    
     switch (e.key) {
         case "ArrowRight":
             xBalon+=10;
@@ -55,7 +75,7 @@ document.addEventListener('keydown',function(e) {
             break;
     
         case "ArrowUp":
-            chutar();
+            tiro= setInterval(chutar,50);
             break;
     
         default:
@@ -65,8 +85,8 @@ document.addEventListener('keydown',function(e) {
 })
 function moverDiana() {
     if (derecha){
-        diana.style.left=(left+=10) +"px";      
+        porteria.style.left=(left+=10) +"px";      
     }else if(izquierda){
-        diana.style.left=(left-=10) +"px";
+        porteria.style.left=(left-=10) +"px";
     }   
 }
