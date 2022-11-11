@@ -60,3 +60,45 @@ function desplazarBalon() {
         }
     }
 }
+
+
+const chutar= ()=>{
+    tiroHecho=true;
+    if(sonidoActivo){
+        document.getElementById("alPalo").play();
+    }
+    intervaloBalon=setInterval(desplazarBalon,50);
+}
+
+function escucharTeclas(evento) {
+    switch (eveto.key) {
+        case 'ArrowLeft':
+            xBalon-= xVelocidadBalon;
+            balon.style.left=`${xBalon}px`
+            break;
+    
+        case 'ArrowRight':
+            xBalon += xVelocidadBalon;
+            balon.style.left=`${xBalon}px`;
+            break;
+    
+        case ' ':
+            chutar();
+            break;
+    
+        case 'ArrowUp':
+        if (!tiroHecho) {
+            chutar();
+        }    
+            break;
+    
+        default:
+            break;
+    }
+}
+
+function comenzar() {
+    document.body.addEventListener('keydown',escucharTeclas);
+}
+
+document.addEventListener('load',comenzar);
