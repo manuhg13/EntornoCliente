@@ -102,3 +102,6 @@ function comenzar() {
 }
 
 document.addEventListener('load',comenzar());
+
+/*-----------------Activar sonidos -----------------------*/
+
