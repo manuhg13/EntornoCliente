@@ -12,7 +12,7 @@ const porteria=document.getElementById('idPorteria');
 let xVelocidadBalon=10;
 let yVelocidadBalon=18;
 
-let xBalon=document.documentElement.clientWidth/2;;
+let xBalon=document.documentElement.clientWidth/2;
 let yBalon=750;
 
 let marcadorFallos= document.getElementById('idFallos');
@@ -20,6 +20,11 @@ let marcadorGoles= document.getElementById('idGoles');
 let entra=false;
 let goles=0;
 let fallos=0;
+
+
+const inputVelPor= document.getElementById('idVelPor');
+const inputDiaPor= document.getElementById('idDiaPor');
+const inputVelBal= document.getElementById('idVelBal');
 
 
 /* ---------------------------Mover y desplazar -------------------------------------*/
@@ -146,4 +151,34 @@ function fueras() {
 function dentros() {
     goles++;
     marcadorGoles.innerHTML=`Goles: ${goles}`;
+
+    if (goles==3){
+        yVelocidadBalon=yVelocidadBalon/2;
+        document.body.style.backgroundColor='red'
+    }else if(goles%3==0) {
+        yVelocidadBalon=yVelocidadBalon/2;
+    }
+}
+function resetearMarcadores() {
+    fallos=0;
+    goles=0;
+    marcadorFallos.innerHTML=`Fallos: ${fallos}`;
+    marcadorGoles.innerHTML=`Goles: ${goles}`;
+}
+
+/*-----Modificar dificultad------*/
+inputVelPor.addEventListener('change', cambioVelocidadPorteria);
+inputVelBal.addEventListener('change', cambioVelocidadBalon);
+inputDiaPor.addEventListener('change', cambiarPorteria);
+
+function cambioVelocidadPorteria() {
+    velocidad= parseInt(inputVelPor.value);
+}
+function cambioVelocidadBalon() {
+    xVelocidadBalon= parseInt(inputVelBal.value);
+}
+function cambiarPorteria() {
+    porteria.style.fontSize=parseInt(inputDiaPor.value) + "px";
+    porteria.style.height=parseInt(inputDiaPor.value) + "px";
+    porteria.style.width=parseInt(inputDiaPor.value) + "px";
 }
