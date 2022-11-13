@@ -17,10 +17,10 @@ let yBalon=750;
 
 let marcadorFallos= document.getElementById('idFallos');
 let marcadorGoles= document.getElementById('idGoles');
+let entra=false;
 let goles=0;
 let fallos=0;
-//marcadorGoles.innerHTML+=`${goles}`;
-//marcadorFallos.innerHTML+=`${fallos}`;
+
 
 /* ---------------------------Mover y desplazar -------------------------------------*/
 function colocar() {
@@ -37,42 +37,44 @@ const desplazarPorteria=() => {
 
     if (xPorteria <=0) {
         velocidad=velocidad * (-1);
-    }
+    } 
 }
 
 function desplazarBalon() {
     yBalon-=yVelocidadBalon;
     balon.style.top=`${yBalon}px`;
 
-    if (yBalon < 0 ) {
+    if (yBalon < 90 ) {
         yBalon=750;
+        fueras();
         clearInterval(intervaloBalon);
     }
 
     if (gol()) { 
-         if (sonidoActivo){
-            document.getElementById("CR7").play();
+        dentros();
+        if (sonidoActivo){
+            document.getElementById("CR7").play();       
         }  
         console.log(goles);
-        marcadorGoles.innerHTML=`Goles: ${goles}`;
-    }else{
-         marcadorFallos.innerHTML=`Fallos: ${fallos}`;
+        
     }
     balon.style.top=`${yBalon}px`;
+    
 }
        
     
 function gol() {
-    if ((yBalon <= (yPorteria + 50)) && (yBalon >= yPorteria)){
-        if ((xBalon >= xPorteria) && (xBalon <= xPorteria+50)) { 
-            goles++;
+    let posiPorteria= porteria.getBoundingClientRect();
+    let posiBalon= balon.getBoundingClientRect();
+
+    if (posiPorteria.x < posiBalon.x + posiBalon.width &&
+        posiPorteria.x + posiPorteria.width > posiBalon.x &&
+        posiPorteria.y < posiBalon.y + posiBalon.height &&
+        posiPorteria.height + posiPorteria.y > posiBalon.y){
             return true;
-        }else{}
-        fallos+=1;
+    }else{
+        return false;
     }
-
-    return false;
-
            
 }
 
@@ -84,6 +86,12 @@ const chutar= ()=>{
     intervaloBalon=setInterval(desplazarBalon,50);
 }
 
+if (entra){
+    marcadorGoles.innerHTML=`Goles: ${goles++}`;
+    entra=false;
+}else{
+    marcadorFallos.innerHTML=`Fallos: ${fallos++}`;
+}
 function escucharTeclas(evento) {
     switch (evento.key) {
         case 'ArrowLeft':
@@ -97,13 +105,8 @@ function escucharTeclas(evento) {
             break;
     
         case ' ':
+            
             chutar();
-            break;
-    
-        case 'ArrowUp':
-        if (!tiroHecho) {
-            chutar();
-        }    
             break;
     
         default:
@@ -141,4 +144,11 @@ function controlSonido() {
 
 /*----------------- goles y fallos -----------*/
 
-
+function fueras() {
+    fallos++;
+    marcadorFallos.innerHTML=`Fallos: ${fallos}`;
+}
+function dentros() {
+    goles++;
+    marcadorGoles.innerHTML=`Goles: ${goles}`;
+}
