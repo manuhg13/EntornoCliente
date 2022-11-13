@@ -63,7 +63,7 @@ function desplazarFlecha(){
     if(yFlecha < 0){  //ha llegado arriba
         yFlecha = 500;
         clearInterval(intervalFlecha);
-        clearInterval(intervalDiana);
+        //clearInterval(intervalDiana);
         //comenzar();
     } 
     flecha.style.top=`${yFlecha}px`;
@@ -73,7 +73,7 @@ function desplazarFlecha(){
         if ((xFlecha >= xDiana) && (xFlecha <= xDiana+diametroDiana)) { //ACIERTO
             if(sonidoActivado) document.getElementById("audio_acierto").play();
             clearInterval(intervalFlecha);
-            clearInterval(intervalDiana);
+            //clearInterval(intervalDiana);
         } else { //FALLO
             if(sonidoActivado) document.getElementById("audio_error").play();
         }

@@ -59,10 +59,7 @@ function chutar() {
         balon.style.top="720px"
         //clearInterval(intervalDiana);
         clearInterval(tiro);
-        (document).ready(function() {
-            let suu = new Audio("../Sonidos/suuu.wav");
-            suu.play();
-        });
+        document.getElementById("CR7").play();
     }
 }
 

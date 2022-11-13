@@ -49,22 +49,32 @@ function desplazarBalon() {
         clearInterval(intervaloBalon);
     }
 
-    if ((yBalon <= (yPorteria + 50)) && (yBalon >= yPorteria)){
-        if ((xBalon >= xPorteria) && (xBalon <= xPorteria+50)) { 
-            if (sonidoActivo){
-                document.getElementById("CR7").play();
-                marcadorGoles.innerHTML=`Goles: ${goles++}`;
-            }  
-        }else{
-
-            marcadorFallos.innerHTML=`Fallos: ${fallos=fallos+1 }`;
-        }
+    if (gol()) { 
+         if (sonidoActivo){
+            document.getElementById("CR7").play();
+        }  
+        console.log(goles);
+        marcadorGoles.innerHTML=`Goles: ${goles}`;
     }else{
-       
+         marcadorFallos.innerHTML=`Fallos: ${fallos}`;
     }
     balon.style.top=`${yBalon}px`;
 }
+       
+    
+function gol() {
+    if ((yBalon <= (yPorteria + 50)) && (yBalon >= yPorteria)){
+        if ((xBalon >= xPorteria) && (xBalon <= xPorteria+50)) { 
+            goles++;
+            return true;
+        }else{}
+        fallos+=1;
+    }
 
+    return false;
+
+           
+}
 
 const chutar= ()=>{
     tiroHecho=true;
