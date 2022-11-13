@@ -51,12 +51,13 @@ function desplazarBalon() {
     }
 
     if (gol()) { 
+        clearInterval(intervaloBalon);
+        yBalon=750;
         dentros();
         if (sonidoActivo){
             document.getElementById("CR7").play();       
         }  
-        console.log(goles);
-        
+        console.log(fallos);
     }
     balon.style.top=`${yBalon}px`;
     
@@ -86,12 +87,6 @@ const chutar= ()=>{
     intervaloBalon=setInterval(desplazarBalon,50);
 }
 
-if (entra){
-    marcadorGoles.innerHTML=`Goles: ${goles++}`;
-    entra=false;
-}else{
-    marcadorFallos.innerHTML=`Fallos: ${fallos++}`;
-}
 function escucharTeclas(evento) {
     switch (evento.key) {
         case 'ArrowLeft':
