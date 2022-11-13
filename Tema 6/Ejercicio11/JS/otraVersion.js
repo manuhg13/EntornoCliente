@@ -9,15 +9,13 @@ let yPorteria=0;
 const balon=document.getElementById('idBalon');
 const porteria=document.getElementById('idPorteria');
 
-let xVelocidadBalon=4;
+let xVelocidadBalon=10;
 let yVelocidadBalon=18;
 
-let xBalon=0;
-let yBalon=500;
+let xBalon=document.documentElement.clientWidth/2;;
+let yBalon=750;
 
-let posiPorteria= porteria.getBoundingClientRect();
-let posiBalon= balon.getBoundingClientRect();
-
+/* ---------------------------Mover y desplazar -------------------------------------*/
 function colocar() {
     yPorteria= porteria.getBoundingClientRect().top;
 
@@ -37,28 +35,26 @@ const desplazarPorteria=() => {
 
 function desplazarBalon() {
     yBalon-=yVelocidadBalon;
-    balon.style.top`${yBalon}px`;
-
-    if (yBalon < 0 ) {
-        yBalon=500;
-        clearInterval(intervaloBalon);
-        clearInterval(intervaloPorteria);
-    }
-
     balon.style.top=`${yBalon}px`;
 
-    if ((posiPorteria.x + posiPorteria.width) > posiBalon.x && posiBalon.y < posiPorteria.bottom &&
-    posiPorteria.x < (posiBalon.x + posiBalon.width) ) {
-        if (sonidoActivo){
-            document.getElementById("CR7").play();
-            clearInterval(intervaloBalon);
-            clearInterval(intervaloPorteria);
-        }  
+    if (yBalon < 0 ) {
+        yBalon=750;
+        clearInterval(intervaloBalon);
+    }
+
+    if ((yBalon <= (yPorteria + 50)) && (yBalon >= yPorteria)){
+        if ((xBalon >= xPorteria) && (xBalon <= xPorteria+50)) { 
+            if (sonidoActivo){
+                document.getElementById("CR7").play();
+                
+            }  
+        }
     }else{
         if (sonidoActivo){
-            document.getElementById("fuera").play();
+            //document.getElementById("fuera").play();
         }
     }
+    balon.style.top=`${yBalon}px`;
 }
 
 
@@ -71,7 +67,7 @@ const chutar= ()=>{
 }
 
 function escucharTeclas(evento) {
-    switch (eveto.key) {
+    switch (evento.key) {
         case 'ArrowLeft':
             xBalon-= xVelocidadBalon;
             balon.style.left=`${xBalon}px`
@@ -98,7 +94,11 @@ function escucharTeclas(evento) {
 }
 
 function comenzar() {
+    balon.style.top=`${yBalon}px`;
+    balon.style.left=`${xBalon}px`;
+    console.log('comenzar');
+    intervaloPorteria=setInterval(desplazarPorteria,50);
     document.body.addEventListener('keydown',escucharTeclas);
 }
 
-document.addEventListener('load',comenzar);
+document.addEventListener('load',comenzar());
