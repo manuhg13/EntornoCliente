@@ -15,6 +15,13 @@ let yVelocidadBalon=18;
 let xBalon=document.documentElement.clientWidth/2;;
 let yBalon=750;
 
+let marcadorFallos= document.getElementById('idFallos');
+let marcadorGoles= document.getElementById('idGoles');
+let goles=0;
+let fallos=0;
+//marcadorGoles.innerHTML+=`${goles}`;
+//marcadorFallos.innerHTML+=`${fallos}`;
+
 /* ---------------------------Mover y desplazar -------------------------------------*/
 function colocar() {
     yPorteria= porteria.getBoundingClientRect().top;
@@ -46,13 +53,14 @@ function desplazarBalon() {
         if ((xBalon >= xPorteria) && (xBalon <= xPorteria+50)) { 
             if (sonidoActivo){
                 document.getElementById("CR7").play();
-                
+                marcadorGoles.innerHTML=`Goles: ${goles++}`;
             }  
+        }else{
+
+            marcadorFallos.innerHTML=`Fallos: ${fallos=fallos+1 }`;
         }
     }else{
-        if (sonidoActivo){
-            //document.getElementById("fuera").play();
-        }
+       
     }
     balon.style.top=`${yBalon}px`;
 }
@@ -94,14 +102,33 @@ function escucharTeclas(evento) {
 }
 
 function comenzar() {
-    balon.style.top=`${yBalon}px`;
+    balon.style.top=`${yBalon}px`; 
     balon.style.left=`${xBalon}px`;
     console.log('comenzar');
     intervaloPorteria=setInterval(desplazarPorteria,50);
     document.body.addEventListener('keydown',escucharTeclas);
+    
 }
 
 document.addEventListener('load',comenzar());
 
 /*-----------------Activar sonidos -----------------------*/
+let botonSonido=document.getElementById('idSonido');
+
+function controlSonido() {
+    if (sonidoActivo) {
+        sonidoActivo=false;
+        botonSonido.value='Activar sonido';
+        botonSonido.classList.remove('fallos');
+        botonSonido.classList.add('goles');
+    }else if(!sonidoActivo){
+        sonidoActivo=true;
+        botonSonido.value='Desactivar sonido';
+        botonSonido.classList.remove('goles');
+        botonSonido.classList.add('fallos');
+    }
+}
+
+/*----------------- goles y fallos -----------*/
+
 
