@@ -60,7 +60,9 @@
 .opciones{
     display: flex;
     height: 70px;
-    justify-content: left;
+    justify-content: flex-start;
+    text-align: center;
+    flex-direction: row;
 }
 
 .reset{
@@ -71,4 +73,11 @@
     color: azure;
     border-radius: 50px;
     background-color: dodgerblue;
+}
+.velocidades{
+    border-radius: 50px;
+    height: 20px;
+    text-align: center;
+    margin: 10px;
+    width: 70px;
 }

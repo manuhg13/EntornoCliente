@@ -153,9 +153,13 @@ function dentros() {
     marcadorGoles.innerHTML=`Goles: ${goles}`;
 
     if (goles==3){
+        document.getElementById('id3Aciertos').setAttribute('checked','checked');
         yVelocidadBalon=yVelocidadBalon/2;
         document.body.style.backgroundColor='red'
     }else if(goles%3==0) {
+        if (goles==6) {
+            document.getElementById('id6Aciertos').setAttribute('checked','checked');
+        }
         yVelocidadBalon=yVelocidadBalon/2;
     }
 }

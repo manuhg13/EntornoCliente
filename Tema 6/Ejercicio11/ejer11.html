@@ -18,9 +18,14 @@
             <p id="idGoles">Goles: 0</p>
         </div>
         <input type="button" value="Resetear marcadores" id="idResetear" onclick="resetearMarcadores()" class="reset">
-        <input type="number" name="velocidadPorteria" id="idVelPor" value="10" max="50" min="10">
-        <input type="number" name="diametroPorteria" id="idDiaPor" value="40" max="80" min="30" step="10">
-        <input type="number" name="velocidadBalon" id="idVelBal" value="10" max="50" min="10">
+        <div>
+            <label for="velocidadPorteria">Velocidad portería:</label>
+            <input type="number" name="velocidadPorteria" id="idVelPor" value="10" max="50" min="10" class="velocidades">
+            <label for="diametroPorteria">Diametro portería:</label>
+            <input type="number" name="diametroPorteria" id="idDiaPor" value="40" max="80" min="30" step="10" class="velocidades">
+            <label for="velocidadBalon">Velocidad balón:</label>
+            <input type="number" name="velocidadBalon" id="idVelBal" value="10" max="50" min="10" class="velocidades">
+        </div>
     </div>
 
     <div class="diana" id="carrusel">	
@@ -29,6 +34,14 @@
     <div class="hueco"></div>
     <div class="pistola">
        <span class="balon" id="idBalon">&#9917;</span>
+    </div>
+
+    <div>
+        <label for="3Aciertos" style="font-size: 25px;margin: 10px">Hat-trick:</label>
+        <input type="checkbox" name="goles" id="id3Aciertos">
+        <br>
+        <label for="6Aciertos" style="font-size: 25px;margin: 10px">6 goles: </label>
+        <input type="checkbox" name="goles" id="id3Aciertos">
     </div>
     <div style="display: none;">
         <audio id="CR7" class="audio" controls> 
