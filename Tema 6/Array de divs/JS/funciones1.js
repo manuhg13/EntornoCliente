@@ -8,5 +8,4 @@ function crearCuadrado(idCuadrado,lado, fondo) {
 
     document.body.appendChild(divCreado);
 
-    
 }
