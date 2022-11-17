@@ -3,5 +3,17 @@ let parrafos = Array.from(document.getElementsByTagName('p'));
 
 /*parrafos.forEach(elemento => elemento.style.color='brown');*/
 
-parrafos.forEach(element => {
-});
+console.log(parrafos);
+
+
+for (const key in parrafos) {
+    if (Object.hasOwnProperty.call(parrafos, key)) {
+        const element = parrafos[key];
+        if (key%2==0) {
+            element.style.color='brown';
+        }else{
+            element.style.fontSize='40px'
+        }
+    }
+}
+
