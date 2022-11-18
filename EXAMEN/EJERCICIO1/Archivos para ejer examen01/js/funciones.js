@@ -47,7 +47,11 @@ nombre de ciudad o por número de habitantes.*/
 let listaDesordenada=crearObjetos();
 console.log(listaDesordenada);
 let alfabetica=listaDesordenada.sort(function(a,b){
-    return a.ciudad.localeCompare(b.ciudad);
+    let x= a.ciudad.toLocaleLowerCase;
+    let y= b.ciudad.toLocaleLowerCase;
+    if (x< y){return -1}
+    if (x> y){return 1}
+    return 0;
 });
 console.log(alfabetica);
 let numero=listaDesordenada.sort(function (a,b) {
@@ -135,5 +139,5 @@ function queOrden(identificador) {
     }
 }
 
-
+// No ordena
 
