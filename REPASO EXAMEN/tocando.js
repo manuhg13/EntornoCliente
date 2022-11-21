@@ -1,9 +1,9 @@
-let parrafos = Array.from(document.getElementsByTagName('p'));
+/*let parrafos = Array.from(document.getElementsByTagName('p'));
 
 
 /*parrafos.forEach(elemento => elemento.style.color='brown');*/
 
-console.log(parrafos);
+/*console.log(parrafos);
 
 
 for (const key in parrafos) {
@@ -15,5 +15,15 @@ for (const key in parrafos) {
             element.style.fontSize='40px'
         }
     }
+}*/
+
+let verde='camisa';
+
+if (verde) {
+    let azul='zapato';
+    var amarillo='gorra';
 }
+
+console.log(amarillo);
+console.log(azul);
 
