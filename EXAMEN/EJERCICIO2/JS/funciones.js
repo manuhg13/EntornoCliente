@@ -43,7 +43,7 @@ function ponerBola() {
         j=0
     }
     let bola= document.createElement('div');
-    bola.setAttribute('style',`float:left; border-radius: 50%; background: ${coloresArray[j]}; width: ${diametrosArray[i]}px; height: ${diametrosArray[i]}px; margin: 10px` );
+    bola.setAttribute('style',`float:left; border-radius: 50%; background: ${coloresArray[j]}; width: ${diametrosArray[i]}px; height: ${diametrosArray[i]}px; margin: 10px`);
     divArriba.appendChild(bola);
     i++;
     j++;
