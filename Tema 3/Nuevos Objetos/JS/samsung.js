@@ -1,4 +1,12 @@
 console.clear();
+Number.prototype.moneda=function () {
+    return this.toLocaleString('es-ES',{style: 'currency',currency: 'EUR'});
+}
+
+String.prototype.mayusculas=function () {
+    return this.toLocaleUpperCase();
+}
+
 const tvSamsung ={
     nombre: 'TV Samsung 42"',
     categoria: 'Televisores',
@@ -6,7 +14,7 @@ const tvSamsung ={
     precio: 345.95,
 
     importe: function () {
-        return `${this.nombre} : ${(this.unidades*this.precio).toLocaleString('es-ES',{style: 'currency',currency: 'EUR'})}`;
+        return `${(this.nombre).mayusculas()} : ${(this.unidades*this.precio).moneda()}`;
     }
 
 }
