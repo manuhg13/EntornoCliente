@@ -1,3 +1,5 @@
+console.clear();
+
 const alumno = new Object();
 alumno.nombre='Jesús';
 alumno['apellidos']='De Nazaret';
@@ -9,6 +11,10 @@ const alumna = {
     nombre: 'María',
     apellidos: 'Ayuso',
     edad: 47,
+    medidas:{
+        altura: 167,
+        pie: 37,
+    }
 }
 
 console.log(alumna);
@@ -24,4 +30,6 @@ class Alumnos{
 
 const alumno3 = new Alumnos('Pedro','Rebellado', 55);
 
-console.log(alumno3);
+
+alumno3.edad=45;
+console.log(alumno3.edad);
