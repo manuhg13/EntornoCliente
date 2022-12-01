@@ -6,7 +6,7 @@ const tvSamsung ={
     precio: 345.95,
 
     importe: function () {
-        return `${this.nombre} : ${(this.unidades*this.precio).toLocaleString('de-DE',{style: 'currency',currency: 'EUR'})}`;
+        return `${this.nombre} : ${(this.unidades*this.precio).toLocaleString('es-ES',{style: 'currency',currency: 'EUR'})}`;
     }
 
 }
