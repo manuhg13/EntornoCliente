@@ -15,7 +15,10 @@ const alumna = {
         altura: 167,
         pie: 37,
     },
-    getInfo2: function(){
+    getInfo2: ()=>{`${nombre} tiene ${edad} años`},
+
+    /* ----> Funcion normal*/
+    getInfo3: function(){
         return `${this.nombre} tiene ${this.edad} años`;
     }
 
@@ -49,4 +52,4 @@ alumna.getInfo= function () {
     return `${this.nombre} tiene ${this.edad} años`;
 };
 
-console.log(alumna.getInfo2());
+console.log(alumna.getInfo3());
