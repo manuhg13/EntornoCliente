@@ -14,7 +14,11 @@ const alumna = {
     medidas:{
         altura: 167,
         pie: 37,
+    },
+    getInfo2: function(){
+        return `${this.nombre} tiene ${this.edad} años`;
     }
+
 }
 
 console.log(alumna);
@@ -29,7 +33,20 @@ class Alumnos{
 }
 
 const alumno3 = new Alumnos('Pedro','Rebellado', 55);
+const alumno4 = new Alumnos('Jesus','Calleja', 75);
 
+/*for(let propiedad in alumna) {
+    if (typeof(propiedad)==Object){
+        for(let valor in propiedad){
+            console.log(valor);
+        }
+    } else{
+        console.log(`${alumna[propiedad]}`);
+    } 
+};*/
 
-alumno3.edad=45;
-console.log(alumno3.edad);
+alumna.getInfo= function () {
+    return `${this.nombre} tiene ${this.edad} años`;
+};
+
+console.log(alumna.getInfo2());
