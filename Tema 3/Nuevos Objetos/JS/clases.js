@@ -17,9 +17,9 @@ class Productos{
     }
 }
 
-const tele = new Productos('Samsung 42"','TV',4,300);
-const tele2 = new Productos('Toshiba 32"','TV',4,250);
-const tele3 = new Productos('Xiaomi 50"','TV',4,540);
+const tele = new Productos('Samsung 42"','TV',4,300.95);
+const tele2 = new Productos('Toshiba 32"','TV',4,250.99);
+const tele3 = new Productos('Xiaomi 50"','TV',4,540.43);
 
 console.log(tele.getInfo());
 console.log(tele2.getInfo());
