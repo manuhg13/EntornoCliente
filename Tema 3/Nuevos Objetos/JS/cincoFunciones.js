@@ -15,7 +15,7 @@ class Productos{
     importe(){
         return this.unidades*this.precio;
     }
-    getInfo(){
+    toString(){
         return `${this.nombre} ${this.tamanio} - ${this.categoria} | uds: ${this.unidades} | a ${(this.precio).moneda()}`
     }
 
@@ -34,12 +34,8 @@ let porNombre=prodSortByName(arrayProductos);
 console.log(porNombre);
 
 function prodSortByName(arrayProd) {
-    return arrayProd.sort(function (a,b) {
-        if (a.nombre < b.nombre) return 1;
-        if (a.nombre > b.nombre) return -1;
-        return 0;
-
-    });
+    let nuevoArray=Array.from(arrayProd);
+    return nuevoArray.sort((p1,p2)=> p1.nombre.localeCompare(p2.nombre));
 }
 
 //--------------------------------------------------------------------
@@ -78,6 +74,6 @@ prodList(arrayProductos);
 function prodList(arrayP) {
     console.log("Lista de productos");
     arrayP.forEach(prod => {
-        console.log(prod.getInfo());
+        console.log(prod.toString());
     });
 }
