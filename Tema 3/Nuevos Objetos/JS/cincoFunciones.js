@@ -74,10 +74,7 @@ function prodsWithLowUnits(array,uds=5) {
 //----------------------------------------------------------------------------
 
 function prodList(arrayP) {
-
-    console.log("Lista de productos");
-
-    let cadena= arrayP.reduce((texto,producto)=>texto+= `\n${producto.toString()} `);
+    let cadena= "Listado de productos:\n" + arrayP.reduce((texto,producto)=>texto+= `\n${producto.toString()}`);
     return cadena;
     
 }
