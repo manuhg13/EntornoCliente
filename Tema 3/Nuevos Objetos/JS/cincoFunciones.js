@@ -51,11 +51,13 @@ function prodSortByPrice(arrayPro) {
 let porPrecioTotal=prodTotalPrice(arrayProductos);
 console.log(porPrecioTotal);
 function prodTotalPrice(arrayProductos) {
-    let arrayImportes=[];
-    arrayProductos.forEach(prod => {
+    //Lo que hace .reduce() es que se le pasa un primer parametro donde acumular y en este caso un producto para coger sus propiedades. 
+    let arrayImportes=arrayProductos.reduce((importe, producto)=> importe+=producto.importe(), 0);
+    return arrayImportes.moneda();
+
+    /*arrayProductos.forEach(prod => {
         arrayImportes.push((prod.importe()).moneda());
-    });
-    return arrayImportes;
+    });*/
 }
 //----------------------------------------------------------------------------
 let porPocasUnidades=prodsWithLowUnits(arrayProductos,5);
@@ -70,10 +72,13 @@ function prodsWithLowUnits(array,uds=5) {
     return arrayDisponibles;
 }
 //----------------------------------------------------------------------------
-prodList(arrayProductos);
+
 function prodList(arrayP) {
+
     console.log("Lista de productos");
-    arrayP.forEach(prod => {
-        console.log(prod.toString());
-    });
+
+    let cadena= arrayP.reduce((texto,producto)=>texto+= `\n${producto.toString()} `);
+    return cadena;
+    
 }
+console.log(prodList(arrayProductos));
