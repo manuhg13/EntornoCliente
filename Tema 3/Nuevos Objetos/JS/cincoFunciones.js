@@ -15,6 +15,9 @@ class Productos{
     importe(){
         return this.unidades*this.precio;
     }
+    getInfo(){
+        return `${this.nombre} ${this.tamanio} - ${this.categoria} | uds: ${this.unidades} | a ${(this.precio).moneda()}`
+    }
 
 }
 
@@ -30,8 +33,13 @@ arrayProductos[4] = new Productos('Hisense','TV',7,740.43, 60);
 let porNombre=prodSortByName(arrayProductos);
 console.log(porNombre);
 
-function prodSortByName(arrayProductos) {
-    return arrayProductos.sort((a,b)=> (a.nombre).localeCompare(b.nombre));
+function prodSortByName(arrayProd) {
+    return arrayProd.sort(function (a,b) {
+        if (a.nombre < b.nombre) return 1;
+        if (a.nombre > b.nombre) return -1;
+        return 0;
+
+    });
 }
 
 //--------------------------------------------------------------------
@@ -39,8 +47,8 @@ function prodSortByName(arrayProductos) {
 let porPrecio=prodSortByPrice(arrayProductos);
 console.log(porPrecio);
 
-function prodSortByPrice(arrayProductos) {
-    return arrayProductos.sort((a,b)=> a.precio-b.precio);
+function prodSortByPrice(arrayPro) {
+    return arrayPro.sort((a,b)=> a.precio-b.precio);
 }
 
 //-------------------------------------------------------------------------
@@ -56,19 +64,20 @@ function prodTotalPrice(arrayProductos) {
 //----------------------------------------------------------------------------
 let porPocasUnidades=prodsWithLowUnits(arrayProductos,5);
 console.log(porPocasUnidades);
-function prodsWithLowUnits(arrayProductos,uds=5) {
+function prodsWithLowUnits(array,uds=5) {
     let arrayDisponibles=[];
-    arrayProductos.forEach(prod => {
+    array.forEach(prod => {
         if(prod.unidades< uds){
             arrayDisponibles.push(prod);
         }
     });
     return arrayDisponibles;
 }
-
-function prodList(arrayProductos) {
+//----------------------------------------------------------------------------
+prodList(arrayProductos);
+function prodList(arrayP) {
     console.log("Lista de productos");
-    arrayProductos.forEach(prod => {
-        
+    arrayP.forEach(prod => {
+        console.log(prod.getInfo());
     });
 }
