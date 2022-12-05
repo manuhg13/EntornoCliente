@@ -54,10 +54,6 @@ function prodTotalPrice(arrayProductos) {
     //Lo que hace .reduce() es que se le pasa un primer parametro donde acumular y en este caso un producto para coger sus propiedades. 
     let arrayImportes=arrayProductos.reduce((importe, producto)=> importe+=producto.importe(), 0);
     return arrayImportes.moneda();
-
-    /*arrayProductos.forEach(prod => {
-        arrayImportes.push((prod.importe()).moneda());
-    });*/
 }
 //----------------------------------------------------------------------------
 let porPocasUnidades=prodsWithLowUnits(arrayProductos,5);
