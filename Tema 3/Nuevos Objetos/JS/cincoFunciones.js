@@ -59,12 +59,7 @@ function prodTotalPrice(arrayProductos) {
 let porPocasUnidades=prodsWithLowUnits(arrayProductos,5);
 console.log(porPocasUnidades);
 function prodsWithLowUnits(array,uds=5) {
-    let arrayDisponibles=[];
-    array.forEach(prod => {
-        if(prod.unidades< uds){
-            arrayDisponibles.push(prod);
-        }
-    });
+    let arrayDisponibles=array.filter((producto)=> producto.unidades<uds);
     return arrayDisponibles;
 }
 //----------------------------------------------------------------------------
