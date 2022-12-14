@@ -2,8 +2,12 @@ Number.prototype.moneda=function () {
     return this.toLocaleString('es-ES',{style: 'currency',currency: 'EUR'});
 }
 
-class Persona{
+if (Persona.idPersona>=Persona.MAX_AFORO()){
+    console.log('AVISO: Hay más de 6 objetos creados.');
+}
 
+class Persona{
+    
     static idPersona=100;
     static MAX_AFORO(){
         return 106;
@@ -51,7 +55,8 @@ class Persona{
     }
 
     toString(){
-        return `${this._nombre} ${this._apellidos}, ${this._edad} años. ID=${this.id}`; 
+        return `${this.id}:\n\t\t ${this._nombre} ${this._apellidos}\n\t\tEdad: ${this._edad}`;
+        //return `${this._nombre} ${this._apellidos}, ${this._edad} años. ID=${this.id}`; 
     }
 }
 
@@ -109,7 +114,7 @@ class Empleado extends Persona{
     
 
     toString(){
-        return `${super.toString()} || sueldo: ${this._sueldo.moneda()}`; 
+        return `Empleado ${super.toString()}\n\t\tSueldo: ${this._sueldo.moneda()}`; 
     }
 }
 
@@ -162,10 +167,19 @@ class Cliente extends Persona{
         return this._fecha;
     }
 
+    set fecha(fecha){
+        this._fecha=new Date(fecha);
+        const param = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        this._fecha=this._fecha.toLocaleDateString('es-ES',param);
+    }
+
+    toString(){
+        return `Cliente ${super.toString()}\n\t\tRegistro: `
+    }
+
 }
 
 
-const empleado1 = new Empleado('Juan','andres gomez',37, 27000);
 
 
 
