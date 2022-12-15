@@ -1,9 +1,6 @@
+console.clear()
 Number.prototype.moneda=function () {
     return this.toLocaleString('es-ES',{style: 'currency',currency: 'EUR'});
-}
-
-if (Persona.idPersona>=Persona.MAX_AFORO()){
-    console.log('AVISO: Hay más de 6 objetos creados.');
 }
 
 class Persona{
@@ -12,6 +9,7 @@ class Persona{
     static MAX_AFORO(){
         return 106;
     }
+
 
     constructor(nombre,apellidos,edad){
         this.id=++Persona.idPersona;
@@ -22,7 +20,7 @@ class Persona{
     }
     
     get nombre(){
-        return this._nombre[0].toUpperCase() + this._nombre.slice(1);
+        return this._nombre[0].toUpperCase() + this._nombre.slice(1).toLowerCase();
     }
 
     set nombre(nombre){
@@ -55,8 +53,8 @@ class Persona{
     }
 
     toString(){
-        return `${this.id}:\n\t\t ${this._nombre} ${this._apellidos}\n\t\tEdad: ${this._edad}`;
-        //return `${this._nombre} ${this._apellidos}, ${this._edad} años. ID=${this.id}`; 
+        return `${this.id}:\n\t\t${this.nombre} ${this.apellidos}\n\t\tEdad: ${this._edad}`;
+         
     }
 }
 
@@ -69,41 +67,6 @@ class Empleado extends Persona{
 
         this._sueldo=sueldo;
     }
-
-    get nombre(){
-        return this._nombre[0].toUpperCase() + this._nombre.slice(1);
-    }
-
-    set nombre(nombre){
-        this._nombre=nombre[0].toUpperCase() + (this._nombre.slice(1)).toLowerCase();
-    }
-
-
-    get apellidos(){
-        let arrayApe=Array.from(this._apellidos.split(' '));
-        this._apellidos='';
-        arrayApe.forEach(palabra => {
-            this._apellidos+=palabra[0].toUpperCase() + (palabra.slice(1)).toLowerCase() + ' ';
-        });
-        return this._apellidos;
-    }
-    
-    set apellidos(apellidos){
-        this._apellidos=apellidos;
-        let arrayApe=Array.from(this._apellidos.split(' '));
-        this._apellidos='';
-        arrayApe.forEach(palabra => {
-            this._apellidos+=palabra[0].toUpperCase() + palabra.slice(1).toLowerCase() + ' ';
-        });
-        
-    }
-    get edad(){
-        return this._edad;
-    }
-
-    set edad(edad){
-        this._edad=edad;
-    }
     get sueldo(){
         return this._sueldo;
     }
@@ -114,7 +77,7 @@ class Empleado extends Persona{
     
 
     toString(){
-        return `Empleado ${super.toString()}\n\t\tSueldo: ${this._sueldo.moneda()}`; 
+        return `Empleado ${super.toString()}\n\t\tSueldo: ${this.sueldo.moneda()}`; 
     }
 }
 
@@ -129,56 +92,33 @@ class Cliente extends Persona{
     }
     
     hoy(){
-        fecha= new Date();
-        const param = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        return fecha.toLocaleDateString('es-ES',param);
+        let fecha= new Date();
+        return fecha.toLocaleDateString('es-ES');
     }
 
-    get nombre(){
-        return this._nombre[0].toUpperCase() + this._nombre.slice(1);
-    }
-
-    set nombre(nombre){
-        this._nombre=nombre[0].toUpperCase() + (this._nombre.slice(1)).toLoweCase();
-    }
-    get apellidos(){
-        let arrayApe=Array.from(this._apellidos.split(' '));
-        arrayApe.forEach(palabra => {
-            this._apellidos+=palabra[0].toUpperCase() + (palabra.slice(1)).toLoweCase() + ' ';
-        });
-        return this._apellidos;
-    }
-
-    set apellidos(apellidos){
-        let arrayApe=Array.from(apellidos.split(' '));
-        arrayApe.forEach(palabra => {
-            this._apellidos+=palabra[0].toUpperCase() + (palabra.slice(1)).toLoweCase() + ' ';
-        });
-        
-    }
-    get edad(){
-        return this._edad;
-    }
-
-    set edad(edad){
-        this._edad=edad;
-    }
     get fecha(){
         return this._fecha;
     }
 
     set fecha(fecha){
         this._fecha=new Date(fecha);
-        const param = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        this._fecha=this._fecha.toLocaleDateString('es-ES',param);
+        this._fecha=this._fecha.toLocaleDateString('es-ES');
     }
 
     toString(){
-        return `Cliente ${super.toString()}\n\t\tRegistro: `
+        return `Cliente ${super.toString()}\n\t\tRegistro: ${this.fecha} `
     }
 
 }
+if (Persona.idPersona>=Persona.MAX_AFORO()){
+    console.log('AVISO: Hay más de 6 objetos creados.');
+}
 
-
-
+let persona1= new Persona('carlos','fernandez Guijarro',45);
+console.log(persona1.toString());
+let empleado1= new Empleado('Antonio','Perez estevez',33,20000);
+console.log(empleado1.toString());
+let cliente1= new Cliente('Lydia','Balenziaga Ounahi',27);
+console.log(cliente1.toString());
+console.log(Persona.idPersona);
 
