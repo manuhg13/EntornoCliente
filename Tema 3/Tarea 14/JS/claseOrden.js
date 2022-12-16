@@ -8,10 +8,11 @@ export class Orden {
         Orden.contadorOrdenes++;
         this.idOrden=++Orden.contadorOrdenes;
         this.productos=[];
+        this.contadorProductosAgregados=0;
     }
 
     agregarProducto(producto){
-        if(this.productos.length < Orden.MAX_PRODUCTOS){
+        if(this.contadorProductosAgregados < Orden.MAX_PRODUCTOS){
             this.productos.push(producto);
             this.contadorProductosAgregados++;
         }else{
@@ -26,9 +27,9 @@ export class Orden {
 
     mostrarOrden(){
         return `------------------------
-        Orden: ${this.idOrden.toString().padStart(2,'0')}${this.productos.reduce((texto,producto)=>texto+=`\n\t·${producto.toString()}`)}
-        ---------------------------
-        Total: ${this.calcularTotal().toLocaleString('es-ES',{style: 'currency',currency: 'EUR'})}`;
+Orden: ${this.idOrden.toString().padStart(3,'0')}\n\t·${this.productos.reduce((texto,producto)=>texto+=`\n\t·${producto.toString()}`)}
+---------------------------
+    Total: ${this.calcularTotal().toLocaleString('es-ES',{style: 'currency',currency: 'EUR'})}`;
     }
 
 }
