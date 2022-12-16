@@ -1,8 +1,8 @@
+
+
 export class Orden {
     static MAX_PRODUCTOS=5;
     static contadorOrdenes=0;
-
-    
 
     constructor(){      
         Orden.contadorOrdenes++;
@@ -26,9 +26,7 @@ export class Orden {
 
     mostrarOrden(){
         return `------------------------
-        Orden: ${function name(params) {
-            
-        }}}${this.idOrden}${this.productos.reduce((texto,producto)=>texto+=`\n\t·${producto.toString()}`)}
+        Orden: ${this.idOrden.toString().padStart(2,'0')}${this.productos.reduce((texto,producto)=>texto+=`\n\t·${producto.toString()}`)}
         ---------------------------
         Total: ${this.calcularTotal().toLocaleString('es-ES',{style: 'currency',currency: 'EUR'})}`;
     }
