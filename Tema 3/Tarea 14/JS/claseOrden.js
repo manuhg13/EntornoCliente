@@ -1,11 +1,9 @@
 
-
 export class Orden {
     static MAX_PRODUCTOS=5;
     static contadorOrdenes=0;
 
     constructor(){      
-        Orden.contadorOrdenes++;
         this.idOrden=++Orden.contadorOrdenes;
         this.productos=[];
         this.contadorProductosAgregados=0;
