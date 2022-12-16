@@ -1,7 +1,7 @@
-/*Number.prototype.moneda=function () {
+Number.prototype.moneda=function () {
     return this.toLocaleString('es-ES',{style: 'currency',currency: 'EUR'});
-}*/
-import { Persona } from "./clasePersona";
+}
+import { Persona } from "./clasePersona.js";
 export class Empleado extends Persona{
     static idEmpleados=200;
 
