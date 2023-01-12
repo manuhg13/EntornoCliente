@@ -40,5 +40,7 @@ function guardar() {
 }
 
 function escribir() {
+    let lista=document.getElementById('lista');
     
+    lista.appendChild()
 }
