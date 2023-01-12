@@ -11,17 +11,31 @@ function getCookies(nombre) {
     
     separadas.forEach(cookie => {
         let nueva=cookie.split('=');
-        arrayCookies.push(new Cookie(nueva[0],nueva[1]))
+        arrayCookies.push(new Cookie(nueva[0].trim(),nueva[1].trim()))
     });
 
     arrayCookies.forEach(cookie => {
         if (cookie.valor==nombre) {
-            return alert("Clave:" + cookie.clave);
+            return alert("Clave:" + decodeURIComponent(cookie.clave));
         }
     });
 
     return alert("No existe esta cookie");
 
+}
+
+function borrarCookies() {
+    let todas=document.cookie;
+    let separadas=todas.split(";");
+    
+    separadas.forEach(cookie => {
+        let nueva=cookie.split('=');
+        arrayCookies.push(new Cookie(nueva[0].trim(),nueva[1].trim()))
+    });
+
+    arrayCookies.forEach(objeto => {
+        document.cookie=`${objeto.clave}=; max-age=0`;
+    });
 }
 
 let i=1;
