@@ -29,17 +29,17 @@ class Productos{
     }
 }
 let lista=document.getElementById('lista');
+let nombre=document.getElementById('idNombre');
+let precio=document.getElementById('idPrecio');
 let arrayProductos=[];
+
 document.getElementById('btnGuardar').addEventListener('click',guardar)
 document.getElementById('btnLimpiar').addEventListener('click',limpiar)
 document.getElementById('btnEliminar').addEventListener('click',eliminar)
 
 function guardar() {
     lista.innerHTML="";
-    let nombre=document.getElementById('idNombre').value;
-    let precio=document.getElementById('idPrecio').value;
-
-    arrayProductos.push(new Productos(nombre,precio))
+    arrayProductos.push(new Productos(nombre.value,precio.value))
     localStorage.almacen= JSON.stringify(arrayProductos);
 
     arrayProductos.forEach(producto => {
