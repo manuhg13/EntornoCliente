@@ -16,3 +16,4 @@ let array1=[
 ];
 
 localStorage.array1=array1
+

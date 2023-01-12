@@ -5,7 +5,7 @@ class Productos{
     constructor(nombre,precio){
         this._nombre=nombre;
         this._precio=precio;
-        this._idProducto=++Productos.contadorProductos; 
+        this.idProducto=++Productos.contadorProductos; 
     }
 
     get nombre(){
@@ -25,22 +25,40 @@ class Productos{
     }
 
     toString(){
-        return `${this.nombre} ${this.precio.toLocaleString('es-ES',{style: 'currency',currency: 'EUR'})}`;
+        return ` ${this.idProducto}.${this.nombre} ${this.precio.toLocaleString('es-ES',{style: 'currency',currency: 'EUR'})}€`;
     }
 }
-
-
+let lista=document.getElementById('lista');
+let arrayProductos=[];
 document.getElementById('btnGuardar').addEventListener('click',guardar)
+document.getElementById('btnLimpiar').addEventListener('click',limpiar)
+document.getElementById('btnEliminar').addEventListener('click',eliminar)
 
 function guardar() {
+    lista.innerHTML="";
     let nombre=document.getElementById('idNombre').value;
     let precio=document.getElementById('idPrecio').value;
 
-    localStorage.setItem(nombre,precio);
+    arrayProductos.push(new Productos(nombre,precio))
+    localStorage.almacen= JSON.stringify(arrayProductos);
+
+    arrayProductos.forEach(producto => {
+        let li=document.createElement('li');
+        li.appendChild(document.createTextNode(producto.toString()));
+        li.setAttribute('class','list-group-item');
+        lista.appendChild(li);
+    });
 }
 
-function escribir() {
-    let lista=document.getElementById('lista');
-    
-    lista.appendChild()
+function limpiar() {
+    lista.innerHTML="Lista limpiada";
 }
+
+function eliminar() {
+    if (confirm('¿Quieres borrar los productos almacenados?')) {
+        localStorage.removeItem('almacen');
+        lista.innerHTML="";
+        Productos.contadorProductos=0;
+    } 
+}
+
