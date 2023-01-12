@@ -21,17 +21,17 @@
       <div class="row">
         <div class="col-lg-6 align-content-center justify-content-center">
           <div class="mb-3">
-            <form>
+            <form id="formulario">
               <label for="" class="form-label">Nombre</label>
-              <input type="text" id="idNombre" class="form-control mb-3" placeholder="Nombre" aria-describedby="helpId">
+              <input type="text" id="idNombre" class="form-control mb-3" placeholder="Nombre" required>
               <label for="" class="form-label">Precio</label>
               <div class="input-group mb-3">
-                <input type="text" id="idPrecio" class="form-control" placeholder="Precio">
+                <input type="text" id="idPrecio" class="form-control" placeholder="Precio" required>
                 <span class="input-group-text">€</span>
               </div>
               
               <button type="reset" class="btn btn-info">Restablecer</button>
-              <button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
+              <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
             </form>
           </div>
         </div>

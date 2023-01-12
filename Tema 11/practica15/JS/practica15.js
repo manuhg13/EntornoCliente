@@ -31,11 +31,26 @@ class Productos{
 let lista=document.getElementById('lista');
 let nombre=document.getElementById('idNombre');
 let precio=document.getElementById('idPrecio');
+let formulario=document.getElementById('formulario');
 let arrayProductos=[];
 
-document.getElementById('btnGuardar').addEventListener('click',guardar)
 document.getElementById('btnLimpiar').addEventListener('click',limpiar)
 document.getElementById('btnEliminar').addEventListener('click',eliminar)
+formulario.addEventListener('submit',function(evento) {
+    evento.preventDefault();
+    let valido=true;
+    const inputs= formulario.querySelectorAll("input[required]");
+    inputs.forEach(campo => {
+        if (!campo.value) {
+            valido=false;
+        }
+    });
+    if(!valido){
+        alert("Rellena todos los campos");
+    }else{
+        guardar();
+    }
+})
 
 function guardar() {
     lista.innerHTML="";
