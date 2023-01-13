@@ -54,15 +54,28 @@ formulario.addEventListener('submit',function(evento) {
 
 function guardar() {
     lista.innerHTML="";
+    if (arrayProductos.length==0 && localStorage.almacen){
+        let productosAlmacenados= localStorage.almacen;
+        let productosParseados= JSON.parse(productosAlmacenados);
+        productosParseados.forEach(element => {
+            let nuevoProducto= new Productos();
+            nuevoProducto.idProducto=element.idProducto;
+            nuevoProducto.nombre=element._nombre;
+            nuevoProducto.precio=element._precio;
+            arrayProductos.push(nuevoProducto);
+
+        });
+    }
     arrayProductos.push(new Productos(nombre.value,precio.value))
     localStorage.almacen= JSON.stringify(arrayProductos);
-
+    
     arrayProductos.forEach(producto => {
         let li=document.createElement('li');
         li.appendChild(document.createTextNode(producto.toString()));
         li.setAttribute('class','list-group-item');
         lista.appendChild(li);
     });
+    
 }
 
 function limpiar() {
@@ -73,6 +86,7 @@ function eliminar() {
     if (confirm('¿Quieres borrar los productos almacenados?')) {
         localStorage.removeItem('almacen');
         lista.innerHTML="";
+        arrayProductos=[];
         Productos.contadorProductos=0;
     } 
 }
