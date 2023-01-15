@@ -29,30 +29,31 @@
               <div class="input-group mb-3">
                 <input type="text" id="idPrecio" class="form-control" placeholder="Precio" required>
                 <span class="input-group-text">€</span>
-              </div>
-                
+              </div>                
               <button type="reset" class="btn btn-info">Restablecer</button>
               <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
             </form>
           </div>
+        </div>
         <div class="col-lg-6 align-content-center justify-content-center">
           <p class="display-6">Modificar productos</p>
           <div class="mb-3">
             <form id="modificar">
-              <input type="hidden" name="oculto" value="">
-              <label for="" class="form-label">Nombre</label>
+              <label for="modId" class="form-label">ID</label>
+              <input type="text" id="modId" class="form-control mb-3" placeholder="ID" readonly>
+              <label for="modNombre" class="form-label">Nombre</label>
               <input type="text" id="modNombre" class="form-control mb-3" placeholder="Nombre" required>
-              <label for="" class="form-label">Precio</label>
+              <label for="modPrecio" class="form-label">Precio</label>
               <div class="input-group mb-3">
                 <input type="text" id="modPrecio" class="form-control" placeholder="Precio" required>
                 <span class="input-group-text">€</span>
-              </div>
-                
+              </div>     
+              <button type="reset" class="btn btn-info">Reestablecer</button>         
               <button type="submit" class="btn btn-primary" id="btnMod">Guardar</button>
             </form>
           </div>
         </div>
-      </div>
+    </div>
   </div>
 
 <hr>

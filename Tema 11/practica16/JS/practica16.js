@@ -5,7 +5,7 @@ let nombreIn=document.getElementById('idNombre');
 let precioIn=document.getElementById('idPrecio');
 let nombreMod=document.getElementById('modNombre');
 let precioMod=document.getElementById('modPrecio');
-let oculto=document.getElementById('oculto');
+let idMod=document.getElementById('modId');
 let formulario=document.getElementById('formulario');
 let formulario2=document.getElementById('modificar');
 let arrayProductos=[];
@@ -41,9 +41,9 @@ formulario2.addEventListener('submit',function(evento) {
     }
 })
 
-document.addEventListener('DOMContentLoaded',pintar);
+document.addEventListener('load',pintar);
 
-function pintar() {
+function pintar(arrayProductos) {
     tabla.innerHTML="";
     arrayProductos.forEach(producto => {
         let linea=document.createElement('tr');
@@ -81,7 +81,7 @@ function pintar() {
         boton2.addEventListener('click',function() {
             let padreBoton=this.parentNode;
             let objetivo=padreBoton.parentNode;
-            oculto.value=objetivo.children[0].innerHTML;
+            idMod.value=objetivo.children[0].innerHTML;
             nombreMod.value=objetivo.children[1].innerHTML;
             precioMod.value=objetivo.children[2].innerHTML;
         });
@@ -108,13 +108,13 @@ function guardar() {
     arrayProductos.push(new Productos(nombreIn.value,precioIn.value))
     localStorage.almacen= JSON.stringify(arrayProductos);
     
-    pintar();
+    pintar(arrayProductos);
     
 }
 
 function modificar() {
     arrayProductos.forEach(producto => {
-        if (producto.idProducto== oculto.value) {
+        if (producto.idProducto== idMod.value) {
             producto.nombre=nombreMod.value;
             producto.precio=precioMod.value;
         }
