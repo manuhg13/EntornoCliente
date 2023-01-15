@@ -1,13 +1,12 @@
-import { Productos } from "./Productos";
+import { Productos } from "./Productos.js";
 
-let lista=document.getElementById('lista');
-let nombre=document.getElementById('idNombre');
-let precio=document.getElementById('idPrecio');
+let tabla=document.getElementById('cuerpo');
+let nombreIn=document.getElementById('idNombre');
+let precioIn=document.getElementById('idPrecio');
 let formulario=document.getElementById('formulario');
 let arrayProductos=[];
 
-document.getElementById('btnLimpiar').addEventListener('click',limpiar)
-document.getElementById('btnEliminar').addEventListener('click',eliminar)
+
 formulario.addEventListener('submit',function(evento) {
     evento.preventDefault();
     let valido=true;
@@ -25,7 +24,6 @@ formulario.addEventListener('submit',function(evento) {
 })
 
 function guardar() {
-    lista.innerHTML="";
     if (arrayProductos.length==0 && localStorage.almacen){
         let productosAlmacenados= localStorage.almacen;
         let productosParseados= JSON.parse(productosAlmacenados);
@@ -38,28 +36,48 @@ function guardar() {
 
         });
     }
-    arrayProductos.push(new Productos(nombre.value,precio.value))
+    arrayProductos.push(new Productos(nombreIn.value,precioIn.value))
     localStorage.almacen= JSON.stringify(arrayProductos);
     
     arrayProductos.forEach(producto => {
-        let li=document.createElement('li');
-        li.appendChild(document.createTextNode(producto.toString()));
-        li.setAttribute('class','list-group-item');
-        lista.appendChild(li);
+        let linea=document.createElement('tr');
+
+        let id=document.createElement('td');
+        id.appendChild(document.createTextNode(producto.id));
+        linea.appendChild(id);
+
+        let nombre=document.createElement('td');
+        nombre.appendChild(document.createTextNode(producto.nombre));
+        linea.appendChild(nombre);
+
+        let precio=document.createElement('td');
+        precio.appendChild(document.createTextNode(producto.precio));
+        linea.appendChild(precio);
+
+        let funciones=document.createElement('td');
+        let boton1=document.createElement('button');
+        boton1.innerHTML='Eliminar';
+        boton1.setAttribute('class','btn btn-danger');
+        boton1.addEventListener('click',eliminar);
+        funciones.appendChild(boton1);
+
+        let boton2=document.createElement('button');
+        boton1.innerHTML='Modificar';
+        boton1.setAttribute('class','btn btn-info');
+        boton1.addEventListener('click',modificar);
+        funciones.appendChild(boton2);
+        linea.appendChild(funciones);
+
+        cuerpo.appendChild(linea);
     });
     
 }
 
-function limpiar() {
-    lista.innerHTML="Lista limpiada";
+function modificar() {
+    
 }
 
 function eliminar() {
-    if (confirm('¿Quieres borrar los productos almacenados?')) {
-        localStorage.removeItem('almacen');
-        lista.innerHTML="";
-        arrayProductos=[];
-        Productos.contadorProductos=0;
-    } 
+    
 }
 

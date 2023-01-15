@@ -20,6 +20,7 @@
   <div class="container text-center col-12">
       <div class="row">
         <div class="col-lg-6 align-content-center justify-content-center">
+          <p class="display-6">Crear productos</p>
           <div class="mb-3">
             <form id="formulario">
               <label for="" class="form-label">Nombre</label>
@@ -35,15 +36,26 @@
             </form>
           </div>
         </div>
-        <div class="col-lg-6 align-content-center justify-content-center">
-            <p class="display-6">Productos</p>
-            <ul class="list-group list-group-flush" id="lista">
-              
-            </ul>
-            <button type="button" class="btn btn-warning mt-4" id="btnLimpiar">Limpiar vista</button>
-            <button type="button" class="btn btn-danger mt-4" id="btnEliminar">Eliminar todo</button>
-            
-        </div>
+      </div>
+  </div>
+
+<hr>
+<div class="container text-center col-12">
+    <p class="display-6">Productos</p>
+      <div class="row">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Precio (€)</th>
+              <th scope="col">Funciones</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpo">
+      
+          </tbody>
+        </table>
       </div>
   </div>
 
