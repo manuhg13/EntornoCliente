@@ -43,7 +43,7 @@ function guardar() {
         let linea=document.createElement('tr');
 
         let id=document.createElement('td');
-        id.appendChild(document.createTextNode(producto.id));
+        id.appendChild(document.createTextNode(producto.idProducto));
         linea.appendChild(id);
 
         let nombre=document.createElement('td');
@@ -62,9 +62,9 @@ function guardar() {
         funciones.appendChild(boton1);
 
         let boton2=document.createElement('button');
-        boton1.innerHTML='Modificar';
-        boton1.setAttribute('class','btn btn-info');
-        boton1.addEventListener('click',modificar);
+        boton2.innerHTML='Modificar';
+        boton2.setAttribute('class','btn btn-info');
+        boton2.addEventListener('click',modificar);
         funciones.appendChild(boton2);
         linea.appendChild(funciones);
 
