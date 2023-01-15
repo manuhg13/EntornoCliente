@@ -38,7 +38,7 @@ function guardar() {
         });
     }
     arrayProductos.push(new Productos(nombreIn.value,precioIn.value))
-    localStorage.almacen= JSON.stringify(arrayProductos);
+    
     
     arrayProductos.forEach(producto => {
         let linea=document.createElement('tr');
@@ -77,6 +77,7 @@ function guardar() {
 
         cuerpo.appendChild(linea);
     });
+    localStorage.almacen= JSON.stringify(arrayProductos);
     
 }
 
