@@ -84,7 +84,6 @@ function pintar() {
             oculto.value=objetivo.children[0].innerHTML;
             nombreMod.value=objetivo.children[1].innerHTML;
             precioMod.value=objetivo.children[2].innerHTML;
-
         });
         funciones.appendChild(boton2);
         linea.appendChild(funciones);
@@ -108,12 +107,18 @@ function guardar() {
     }
     arrayProductos.push(new Productos(nombreIn.value,precioIn.value))
     localStorage.almacen= JSON.stringify(arrayProductos);
-
+    
     pintar();
     
 }
 
 function modificar() {
-    
+    arrayProductos.forEach(producto => {
+        if (producto.idProducto== oculto.value) {
+            producto.nombre=nombreMod.value;
+            producto.precio=precioMod.value;
+        }
+    });
+    localStorage.almacen= JSON.stringify(arrayProductos);
 }
 
