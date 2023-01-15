@@ -24,6 +24,7 @@ formulario.addEventListener('submit',function(evento) {
 })
 
 function guardar() {
+    cuerpo.innerHTML="";
     if (arrayProductos.length==0 && localStorage.almacen){
         let productosAlmacenados= localStorage.almacen;
         let productosParseados= JSON.parse(productosAlmacenados);
@@ -57,14 +58,20 @@ function guardar() {
         let funciones=document.createElement('td');
         let boton1=document.createElement('button');
         boton1.innerHTML='Eliminar';
-        boton1.setAttribute('class','btn btn-danger');
-        boton1.addEventListener('click',eliminar);
+        boton1.setAttribute('class','btn btn-danger m-1');
+        boton1.addEventListener('click',function() {
+            let padreBoton=this.parentNode;
+            let objetivo=padreBoton.parentNode;
+            cuerpo.removeChild(objetivo);
+        });
         funciones.appendChild(boton1);
 
         let boton2=document.createElement('button');
         boton2.innerHTML='Modificar';
         boton2.setAttribute('class','btn btn-info');
-        boton2.addEventListener('click',modificar);
+        boton2.addEventListener('click',function() {
+            
+        });
         funciones.appendChild(boton2);
         linea.appendChild(funciones);
 
@@ -77,7 +84,5 @@ function modificar() {
     
 }
 
-function eliminar() {
-    
-}
+
 
