@@ -41,9 +41,9 @@ formulario2.addEventListener('submit',function(evento) {
     }
 })
 
-document.addEventListener('load',pintar);
+document.addEventListener('DOMContentLoaded',pintar);
 
-function pintar(arrayProductos) {
+function pintar() {
     tabla.innerHTML="";
     arrayProductos.forEach(producto => {
         let linea=document.createElement('tr');
@@ -108,7 +108,7 @@ function guardar() {
     arrayProductos.push(new Productos(nombreIn.value,precioIn.value))
     localStorage.almacen= JSON.stringify(arrayProductos);
     
-    pintar(arrayProductos);
+    pintar();
     
 }
 
@@ -120,5 +120,6 @@ function modificar() {
         }
     });
     localStorage.almacen= JSON.stringify(arrayProductos);
+
 }
 
