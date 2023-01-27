@@ -67,7 +67,23 @@ window.addEventListener('load',()=>{
             })
 
             .then((datos)=>{
-                document.getElementById('p1').innerHTML=Object.values(datos);
+                document.getElementById('cuerpo').innerHTML="";
+                let linea =document.createElement('tr');
+
+                let id=document.createElement('td');
+                id.appendChild(document.createTextNode(datos.id));
+                linea.appendChild(id);
+
+                let nombre=document.createElement('td');
+                nombre.appendChild(document.createTextNode(datos.name));
+                linea.appendChild(nombre);
+
+                let descrip=document.createElement('td');
+                descrip.appendChild(document.createTextNode(datos.descrip));
+                linea.appendChild(descrip);
+
+                document.getElementById('cuerpo').appendChild(linea);
+                //document.getElementById('cuerpo').innerHTML=Object.values(datos);
             })
 
             .catch((error)=>console.error(error));
