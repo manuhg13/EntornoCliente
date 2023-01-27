@@ -45,11 +45,11 @@ function getProd(id) {
         })
         http.addEventListener('error',()=>{reject('Error en la petición HTTP')});
     })
-}
-*/
+}*/
+
 //--------------------------------------------------
 
-/*window.addEventListener('load',()=>{
+window.addEventListener('load',()=>{
     $('#formulario').submit(function (evento) { 
         evento.preventDefault();
         let idProd=document.getElementById('id').value;
@@ -75,7 +75,7 @@ function getProd(id) {
         
     });
     
-})*/
+});
 
 //-------------------------------------
 
