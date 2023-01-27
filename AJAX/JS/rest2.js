@@ -1,5 +1,5 @@
-const SERVER="http://localhost:3000/productos";
-const http = new XMLHttpRequest();
+const SERVER="http://192.168.2.205:3000/productos";
+//const http = new XMLHttpRequest();
 
     /*document.getElementById('formulario').addEventListener('submit',(event)=>{
         //event.preventDefault();
@@ -81,10 +81,41 @@ function getProd(id) {
 
 /*$.ajax({
     type: "POST",
-    url: "http://localhost:3000/productos",
-    data: {id:4,name:"Cascos",descip:"Cascos gamming"},
+    url: "http://192.168.2.205:3000/productos",
+    data: {id:"",name:"Impresora",descip:"Impresora gamming"},
     dataType: "dataType",
     success: function (datos) {
         console.log("Esta");
     }
 });*/
+
+
+//-----------------------------------------------------
+
+document.getElementById('introducir').addEventListener('submit',function(e) {
+    e.preventDefault();
+    const prod={
+        id: '',
+        name:document.getElementById('name').value,
+        descrip:document.getElementById('descrip').value
+    }
+
+    fetch(SERVER,{
+        method: 'POST',
+        body: JSON.stringify(prod),
+        headers:{
+            'Content-Type': 'application/json'
+        }
+    })
+    .then((response)=>{
+        if (!response.ok) {
+            throw `Error ${response.status} de la BBDD: ${response.statusText}`;
+        }
+
+        return response.json();
+    })
+    .then(datos=>{
+        alert("Datos bien");
+    })
+    .catch((error)=>console.error(error));
+});

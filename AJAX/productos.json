@@ -1,24 +1,24 @@
 {
-  "productos": [
-    {
-      "id": 1,
-      "name": "Teclado",
-      "descrip": "Teclado mecánico Cherry ps/2"
-    },
-    {
-      "id": 2,
-      "name": "Monitor",
-      "descrip": "Monitor SVGA"
-    },
-    {
-      "id": 3,
-      "name": "Raton",
-      "descrip": "Raton de Susanita"
-    },
-    {
-      "id": "4",
-      "name": "Cascos",
-      "descip": "Cascos gamming"
-    }
-  ]
+    "productos": [
+      {
+        "id": 1,
+        "name": "Teclado",
+        "descrip": "Teclado mecánico Cherry ps/2"
+      },
+      {
+        "id": 2,
+        "name": "Monitor",
+        "descrip": "Monitor SVGA"
+      },
+      {
+        "id": 3,
+        "name": "Raton",
+        "descrip": "Raton de Susanita"
+      },
+      {
+        "id": "4",
+        "name": "Cascos",
+        "descip": "Cascos gamming"
+      }
+    ]
 }
