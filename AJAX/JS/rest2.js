@@ -165,12 +165,10 @@ $('#listar').click(function (e) {
                     let descrip=document.createElement('td');
                     descrip.appendChild(document.createTextNode(element['descrip']));
                     linea.appendChild(descrip);
+                    document.getElementById('cuerpo').appendChild(linea);
                 });
 
-                document.getElementById('cuerpo').appendChild(linea);
             })
 
             .catch((error)=>console.error(error));
-        }
-    
 });
