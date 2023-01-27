@@ -135,3 +135,42 @@ document.getElementById('introducir').addEventListener('submit',function(e) {
     })
     .catch((error)=>console.error(error));
 });
+
+$('#listar').click(function (e) { 
+    e.preventDefault();
+    fetch(`${SERVER}`)
+            .then((response)=>{
+                if (!response.ok) {
+                    throw `Error ${response.status} de la BBDD: ${response.statusText}`;
+                }
+
+                return response.json();
+            })
+
+            .then((datos)=>{
+                document.getElementById('cuerpo').innerHTML="";
+
+                datos.forEach(element => {
+                    
+                    let linea =document.createElement('tr');
+    
+                    let id=document.createElement('td');
+                    id.appendChild(document.createTextNode(element['id']));
+                    linea.appendChild(id);
+    
+                    let nombre=document.createElement('td');
+                    nombre.appendChild(document.createTextNode(element['name']));
+                    linea.appendChild(nombre);
+    
+                    let descrip=document.createElement('td');
+                    descrip.appendChild(document.createTextNode(element['descrip']));
+                    linea.appendChild(descrip);
+                });
+
+                document.getElementById('cuerpo').appendChild(linea);
+            })
+
+            .catch((error)=>console.error(error));
+        }
+    
+});
