@@ -1,0 +1,73 @@
+{
+  "peliculas": [
+    {
+      "id": 1,
+      "nombre": "El septimo sentido",
+      "director": "M. Night Shyamalan",
+      "clasificacion": "Drama"
+    },
+    {
+      "id": 2,
+      "nombre": "Django",
+      "director": "Tarantino",
+      "clasificacion": "Acción"
+    },
+    {
+      "id": 3,
+      "nombre": "Todo Sobre Mi Madre",
+      "director": "Almodobar",
+      "clasificacion": "Drama"
+    },
+    {
+      "id": 4,
+      "nombre": "400",
+      "director": "Paco Martinez Soria",
+      "clasificacion": "Acción"
+    },
+    {
+      "id": 6,
+      "nombre": "Forrest Gump",
+      "director": "Robert Zemeckis",
+      "clasificacion": "Comedia"
+    },
+    {
+      "id": 7,
+      "nombre": "Las Hurdes",
+      "director": "Luis Buñuel",
+      "clasificacion": "Documental"
+    },
+    {
+      "nombre": "Cars",
+      "director": "Pixar",
+      "clasificacion": "Drama",
+      "id": 8
+    },
+    {
+      "nombre": "Wall-E",
+      "director": "Pixar",
+      "clasificacion": "Dibus",
+      "id": 9
+    },
+    {
+      "id": 10
+    }
+  ],
+  "clasificaciones": [
+    {
+      "nombre": "Drama",
+      "id": 1
+    },
+    {
+      "nombre": "Comedia",
+      "id": 2
+    },
+    {
+      "nombre": "Acción",
+      "id": 4
+    },
+    {
+      "nombre": "Terrorifica",
+      "id": 15
+    }
+  ]
+}
