@@ -1,51 +1,4 @@
-const SERVER="http://192.168.2.205:3000/productos";
-//const http = new XMLHttpRequest();
-
-    /*document.getElementById('formulario').addEventListener('submit',(event)=>{
-        //event.preventDefault();
-        let idProd=document.getElementById('id').value
-        http.open('GET',`${SERVER}/${idProd}`);
-        http.send();
-        http.onreadystatechange=()=> {  
-    if (http.readyState===4) {
-        if (http.status===200) {
-            let objeto=JSON.parse(http.responseText);
-            document.getElementById('p1').innerHTML=Object.values(objeto);
-        }
-    }
-    };
-    });*/
-//-------------------------
-/*window.addEventListener('load',function () {  
-    document.getElementById('form').addEventListener('click',(event)=>{
-        let idProd=document.getElementById('id').value
-        if (isNaN(idProd) || idProd=='') {
-            alert('Debes introducir un número');
-        }else{
-            getProd(idProd)
-            .then((datos)=>{
-                document.getElementById('p1').innerHTML=Object.values(datos);
-            })
-
-            .catch((error)=> console.error(error))
-        }
-    });
-});
-function getProd(id) {
-    return new Promise((resolve,reject)=>{
-        
-        http.open('GET',`${SERVER}/${id}`,true);
-        http.send();
-        http.addEventListener('load',function(){
-            if (http.status===200) {
-                resolve(JSON.parse(http.responseText));
-            }else{
-                reject(`Error ${http.status} (${http.statusText}) ${id}`);
-            }
-        })
-        http.addEventListener('error',()=>{reject('Error en la petición HTTP')});
-    })
-}*/
+const SERVER="http://192.168.31.205:3000";
 
 //--------------------------------------------------
 
@@ -57,7 +10,7 @@ window.addEventListener('load',()=>{
         if (isNaN(idProd) || idProd.trim()=="") {
             alert("Debes introducir un nº");
         }else{
-            fetch(`${SERVER}/${idProd}`)
+            fetch(`${SERVER}/productos/${idProd}`)
             .then((response)=>{
                 if (!response.ok) {
                     throw `Error ${response.status} de la BBDD: ${response.statusText}`;
@@ -83,7 +36,7 @@ window.addEventListener('load',()=>{
                 linea.appendChild(descrip);
 
                 document.getElementById('cuerpo').appendChild(linea);
-                //document.getElementById('cuerpo').innerHTML=Object.values(datos);
+                
             })
 
             .catch((error)=>console.error(error));
@@ -92,19 +45,6 @@ window.addEventListener('load',()=>{
     });
     
 });
-
-//-------------------------------------
-
-/*$.ajax({
-    type: "POST",
-    url: "http://192.168.2.205:3000/productos",
-    data: {id:"",name:"Impresora",descip:"Impresora gamming"},
-    dataType: "dataType",
-    success: function (datos) {
-        console.log("Esta");
-    }
-});*/
-
 
 //-----------------------------------------------------
 
@@ -116,7 +56,7 @@ document.getElementById('introducir').addEventListener('submit',function(e) {
         descrip:document.getElementById('descrip').value
     }
 
-    fetch(SERVER,{
+    fetch(`${SERVER}/productos`,{
         method: 'POST',
         body: JSON.stringify(prod),
         headers:{
@@ -138,7 +78,7 @@ document.getElementById('introducir').addEventListener('submit',function(e) {
 
 $('#listar').click(function (e) { 
     e.preventDefault();
-    fetch(`${SERVER}`)
+    fetch(`${SERVER}/productos`)
             .then((response)=>{
                 if (!response.ok) {
                     throw `Error ${response.status} de la BBDD: ${response.statusText}`;
