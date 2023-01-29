@@ -1,4 +1,4 @@
-const SERVER="http://192.168.0.214:3000";
+const SERVER="http://192.168.31.205:4000";
 
 window.addEventListener('load', ()=>{
     //Buscar

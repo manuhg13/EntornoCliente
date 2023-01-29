@@ -19,6 +19,9 @@
       "id": 4,
       "name": "Impresora",
       "descrip": "Impresora laser HP"
+    },
+    {
+      "id": 5
     }
   ]
 }
