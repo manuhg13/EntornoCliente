@@ -20,7 +20,7 @@
     <hr>
     <div class="container text-center col-12">
       <div class="row">
-        <div class="col-lg-6 align-content-center justify-content-center">
+        <div class="col-lg-4 align-content-center justify-content-center">
           <p class="display-6">Buscar productos</p>
           <div class="mb-3">
             <form id="formulario">
@@ -30,7 +30,7 @@
             </form>
           </div>
         </div>
-        <div class="col-lg-6 align-content-center justify-content-center">
+        <div class="col-lg-4 align-content-center justify-content-center">
           <p class="display-6">Crear productos</p>
           <div class="mb-3">
             <form id="introducir">
@@ -40,6 +40,26 @@
               <input type="text" name="descrip" class="form-control mb-3" id="descrip">
               <input type="submit" id="guardar" name="guardar" class="btn btn-outline-dark" value="Guardar">
               <input type="reset" id="reset" name="guardar" class="btn btn-outline-dark" value="Reestablecer">
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-4 align-content-center justify-content-center">
+          <p class="display-6">Modificar productos</p>
+          <div class="mb-3">
+            <form id="modificar">
+              <label for="modId" class="form-label">ID</label>
+              <input type="text" id="modId" class="form-control mb-3" placeholder="ID" readonly>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Datos" aria-label="select" id="datos" aria-describedby="">
+                </div>
+                <select class="form-select" name="propiedad" id="propiedad">
+                  <option selected>Elige una propiedad</option>
+                  <option value="name">Nombre</option>
+                  <option value="descrip">Descripcion</option>
+                </select>
+              </div>
+              <button class="btn btn-outline-dark" type="submit" id="">Modificar</button>
+              </div>     
             </form>
           </div>
         </div>
@@ -55,6 +75,7 @@
               <th scope="col">#</th>
               <th scope="col">Nombre</th>
               <th scope="col">Descripcion</th>
+              <th scope="col">Funciones</th>
             </tr>
           </thead>
           <tbody id="cuerpo">

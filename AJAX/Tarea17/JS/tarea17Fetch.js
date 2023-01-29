@@ -35,6 +35,18 @@ window.addEventListener('load',()=>{
                 descrip.appendChild(document.createTextNode(datos.descrip));
                 linea.appendChild(descrip);
 
+                let funciones=document.createElement('td');
+                let boton1=document.createElement('button');
+                boton1.innerHTML='Modificar'
+                boton1.setAttribute('class','btn btn-outline-dark m-1');
+                funciones.appendChild(boton1);
+                boton1.addEventListener('click',function(){
+                    let padreBoton=this.parentNode;
+                    let objetivo=padreBoton.parentNode;
+                    document.getElementById('modId').value=objetivo.children[0].innerHTML;
+                });
+                linea.appendChild(funciones);
+
                 document.getElementById('cuerpo').appendChild(linea);
                 
             })
@@ -45,6 +57,42 @@ window.addEventListener('load',()=>{
     });
     
 });
+
+//-------------------------------------------------------------------
+$('#modificar').submit(function (e) { 
+    e.preventDefault();
+    let idProd=document.getElementById('modId').value
+    //let propiedad=document.getElementById('propiedad').value
+    let datos=document.getElementById('datos').value
+
+    if (isNaN(idProd) || idProd.trim()=="") {
+        alert("Debes introducir un nº");
+    }else{
+        fetch(`${SERVER}/productos`,{
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id: parseInt(idProd),
+                [document.getElementById('propiedad').value]: datos
+            })
+        })
+        .then(response =>{
+            if (!response.ok) {
+                throw `Error ${response.status} de la BBDD: ${response.statusText}`;
+            }
+
+            return response.json();
+        })
+        .then(datos=>{
+            alert("Datos bien actualizados");
+        })
+        .catch((error)=>console.error(error));
+    }
+    
+});
+
 
 //-----------------------------------------------------
 
@@ -76,6 +124,8 @@ document.getElementById('introducir').addEventListener('submit',function(e) {
     .catch((error)=>console.error(error));
 });
 
+//----------------------------------------------------------------------------
+
 $('#listar').click(function (e) { 
     e.preventDefault();
     fetch(`${SERVER}/productos`)
@@ -106,6 +156,18 @@ $('#listar').click(function (e) {
                     descrip.appendChild(document.createTextNode(element['descrip']));
                     linea.appendChild(descrip);
                     document.getElementById('cuerpo').appendChild(linea);
+
+                    let funciones=document.createElement('td');
+                    let boton1=document.createElement('button');
+                    boton1.innerHTML='Modificar'
+                    boton1.setAttribute('class','btn btn-outline-dark m-1');
+                    funciones.appendChild(boton1);
+                    boton1.addEventListener('click',function(){
+                    let padreBoton=this.parentNode;
+                    let objetivo=padreBoton.parentNode;
+                    document.getElementById('modId').value=objetivo.children[0].innerHTML;
+                });
+                linea.appendChild(funciones);
                 });
 
             })
