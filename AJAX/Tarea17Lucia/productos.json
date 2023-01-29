@@ -1,0 +1,24 @@
+{
+    "productos": [
+        {
+            "id": 1,
+            "name": "Teclado",
+            "descrip": "Teclado mecánico Cherry ps/2"
+        },
+        {
+            "id": 2,
+            "name": "Monitor",
+            "descrip": "Monitor Philips"
+        },
+        {
+            "id": 3,
+            "name": "Ratón",
+            "descrip": "Ratón Hama MC-100"
+        },
+        {
+            "id": 4,
+            "name": "Impresora",
+            "descrip": "Impresora Canon Pixma"
+        }
+    ]
+}
