@@ -1,4 +1,4 @@
-const SERVER="http://192.168.31.205:4000";
+const SERVER="http://192.168.2.205:4000";
 const http = new XMLHttpRequest();
 //------------------------------------------------------
 

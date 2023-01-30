@@ -1,4 +1,4 @@
-const SERVER="http://192.168.31.205:3000";
+const SERVER="http://192.168.2.205:3000";
 
 //--------------------------------------------------
 
@@ -68,7 +68,7 @@ $('#modificar').submit(function (e) {
     if (isNaN(idProd) || idProd.trim()=="") {
         alert("Debes introducir un nº");
     }else{
-        fetch(`${SERVER}/productos`,{
+        fetch(`${SERVER}/productos/${idProd}`,{
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'

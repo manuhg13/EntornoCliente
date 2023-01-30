@@ -18,10 +18,15 @@
     {
       "id": 4,
       "name": "Impresora",
-      "descrip": "Impresora laser HP"
+      "descrip": "Impresora con toner"
     },
     {
       "id": 5
+    },
+    {
+      "id": 6,
+      "name": "Perro",
+      "descrip": "No es un gato"
     }
   ]
 }
