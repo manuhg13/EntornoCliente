@@ -1,0 +1,32 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "name": "Teclado",
+      "descrip": "Teclado mecánico Cherry ps/2"
+    },
+    {
+      "id": 2,
+      "name": "Monitor",
+      "descrip": "Monitor SVGA"
+    },
+    {
+      "id": 3,
+      "name": "Raton",
+      "descrip": "Raton de Susanita"
+    },
+    {
+      "id": 4,
+      "name": "Impresora",
+      "descrip": "Impresora con toner"
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6,
+      "name": "Perro",
+      "descrip": "No es un gato"
+    }
+  ]
+}
