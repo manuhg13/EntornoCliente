@@ -104,3 +104,77 @@ async function todos() {
 
   return datos;
 }
+
+//----------------------------------------------------------------------------------
+
+$('#introducir').submit(async function (e) { 
+  e.preventDefault();
+  const prod={
+    id: '',
+    name:document.getElementById('name').value,
+    descrip:document.getElementById('descrip').value
+  } 
+
+  await insertProd(prod);
+
+  alert('Esta bien hecho')
+
+  
+});
+
+async function insertProd(prod){
+  const response = await fetch(`${SERVER}/productos`,{
+    method: 'POST',
+    body: JSON.stringify(prod),
+    headers:{
+        'Content-Type': 'application/json'
+    }
+  })
+
+  if (!response.ok) {
+    throw `Error ${response.status} de la BBDD: ${response.statusText}`;
+  }
+
+  const datos= await response.json();
+
+  return datos;
+}
+
+//---------------------------------------------------------
+
+$('#modificar').submit(async function (e) { 
+  e.preventDefault();
+  let idProd=document.getElementById('modId').value
+  let datos=document.getElementById('datos').value
+  const prod={
+    [document.getElementById('propiedad').value]: datos
+  }
+
+  if (isNaN(idProd) || idProd.trim()=="") {
+    alert("Debes introducir un nº");
+  }else{
+   await modProd(prod,idProd);
+
+   alert('Datos modificados');
+  }
+
+});
+
+async function modProd(prod,idProd){
+  const response= await fetch(`${SERVER}/productos/${idProd}`,{
+    method: 'PATCH',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(prod)
+  })
+
+  if (!response.ok) {
+    throw `Error ${response.status} de la BBDD: ${response.statusText}`;
+  }
+
+  const datos= await response.json();
+
+  return datos;
+
+}

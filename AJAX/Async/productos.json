@@ -21,12 +21,14 @@
       "descrip": "Impresora con toner"
     },
     {
-      "id": 5
-    },
-    {
       "id": 6,
       "name": "Perro",
-      "descrip": "No es un gato"
+      "descrip": "Es un doberman"
+    },
+    {
+      "id": 7,
+      "name": "Gorro",
+      "descrip": "No es rojo"
     }
   ]
 }

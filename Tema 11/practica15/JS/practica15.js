@@ -37,14 +37,19 @@ let arrayProductos=[];
 document.getElementById('btnLimpiar').addEventListener('click',limpiar)
 document.getElementById('btnEliminar').addEventListener('click',eliminar)
 formulario.addEventListener('submit',function(evento) {
+    //Esto se pone siempre
     evento.preventDefault();
+    //En principio siempre valido pero comprobamos de todas formas 
     let valido=true;
+    //Cogemos los inputs que son obligatorios
     const inputs= formulario.querySelectorAll("input[required]");
+    //Los vamos pasando
     inputs.forEach(campo => {
         if (!campo.value) {
             valido=false;
         }
     });
+    //Mensajito si esta mal
     if(!valido){
         alert("Rellena todos los campos");
     }else{
