@@ -13,7 +13,7 @@ let arrayLugares = [
   "Baraja",
   "Descartes",
 ];
-
+let texto="";
 boton.addEventListener("click", async function () {
   for await (const palo of arrayPalos) {
     let obj = {
@@ -23,7 +23,7 @@ boton.addEventListener("click", async function () {
     const dato1 = await anadirPalo(obj);
   }
   for await (const palo of arrayPalos) {
-    for (const numero of arrayNumeros) {
+    for await (const numero of arrayNumeros) {
       let carta = {
         id: "",
         palo: palo,
@@ -32,12 +32,30 @@ boton.addEventListener("click", async function () {
       };
 
       const datos2 = await anadirNaipe(carta);
+
+      /*let objeto=JSON.parse(datos2);
+
+      texto+=`${objeto.cata} de ${objeto.palo} | `;*/
+
     }
   }
-  postTablaLugar("/lugar");
-  const [naipes] = await Promise.all([getTabla("/naipes")]);
 
-  renderMazo(naipes);
+  for await (const lugar of arrayLugares) {
+        let obj = {
+      id: "",
+      name: lugar,
+     };
+
+     const datos3 = await anadirLugar(lugar);
+    }
+
+
+  let parrafo = document.createElement("p");
+
+  parrafo.appendChild(document.createTextNode(texto));
+
+  document.getElementById("div04").appendChild(parrafo);
+
 });
 
 async function anadirNaipe(carta) {
@@ -81,15 +99,11 @@ async function anadirPalo(obj) {
     })
     .catch((error) => console.error(error));
 }
-async function postTablaLugar(lugar) {
-  for await (const lugar of arrayLugares) {
-    let obj = {
-      id: "",
-      name: lugar,
-    };
-    fetch(`${SERVER}${lugar}`, {
+async function anadirLugar(lugar) {
+  
+    fetch(`${SERVER}/lugar`, {
       method: "POST",
-      body: JSON.stringify(obj),
+      body: JSON.stringify(lugar),
       headers: {
         "Content-Type": "application/json",
       },
@@ -106,30 +120,5 @@ async function postTablaLugar(lugar) {
       })
       .catch((error) => console.error(error));
   }
-}
-
-async function getTabla(tabla) {
-  const response = await fetch(`${SERVER}${tabla}`);
-
-  if (!response.ok) {
-    throw `Error ${response.status}de la BBDD: ${response.statusText}`;
-  }
-
-  const datos = await response.json();
-
-  return datos;
-}
-
-function renderMazo(naipes) {
-  let parrafo = document.createElement("p");
-
-  let texto = naipes.reduce(
-    (cadena, carta) => (cadena += `${carta.carta} de ${carta.palo} | `)
-  );
-
-  parrafo.appendChild(document.createTextNode(texto));
-
-  document.getElementById("div04").appendChild(parrafo);
-}
 
 document.getElementById("div03").appendChild(boton);
