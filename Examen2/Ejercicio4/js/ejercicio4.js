@@ -26,7 +26,7 @@ window.addEventListener('load',async function(){
 async function reparteMano(jugador){
     let devolver=[];
     for(let i=0;i<=4;i++){
-        const response=await fetch(`${SERVER}/naipes?id=${random(1,40)}&estado=mazo`,{
+        const response=await fetch(`${SERVER}/naipes/${random(1,40)}?estado=mazo`,{
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
@@ -34,6 +34,8 @@ async function reparteMano(jugador){
             body: JSON.stringify({
                 estado:jugador
             })
+
+            
         })
     }
     for(let i=0;i<=4;i++){
@@ -55,7 +57,9 @@ async function reparteMano(jugador){
 function renderMano(cartas,jugador) {
     let texto=document.createElement('p');
 
-    let mano=cartas.reduce((texto,carta)=>{texto+= `${carta.id} de ${carta.palo} |`})
+    let mano=cartas.reduce((cadena,carta)=>{cadena+= `${carta.id} de ${carta.palo} |`});
+
+    texto.innerHTML=mano;
 }
 
 function random(min,max) {
